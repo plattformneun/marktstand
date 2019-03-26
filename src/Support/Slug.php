@@ -21,7 +21,7 @@ class Slug
 
     /**
      * The string presentation of the object.
-     * 
+     *
      * @return string
      */
     public function __toString()

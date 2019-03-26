@@ -2,16 +2,16 @@
 
 namespace Marktstand\Product;
 
-use Illuminate\Database\Eloquent\Model;
-use Marktstand\Payment\Commission;
 use Marktstand\Support\Unit;
 use Marktstand\Users\Producer;
+use Marktstand\Payment\Commission;
+use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
     /**
      * Get the products price.
-     * 
+     *
      * @return Marktstand\Product\Price
      */
     public function price()
@@ -21,7 +21,7 @@ class Product extends Model
 
     /**
      * Get the products volume.
-     * 
+     *
      * @return Marktstand\Product\Volume
      */
     public function volume()
@@ -41,7 +41,7 @@ class Product extends Model
 
     /**
      * Query the categories.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function categories()
@@ -51,7 +51,7 @@ class Product extends Model
 
     /**
      * Query the filters.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function filters()
@@ -61,7 +61,7 @@ class Product extends Model
 
     /**
      * Query the qualities.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function qualities()
@@ -71,7 +71,7 @@ class Product extends Model
 
     /**
      * Get the products selling unit.
-     * 
+     *
      * @param  string $value
      * @return Marktstand\Support\Unit
      */
@@ -82,7 +82,7 @@ class Product extends Model
 
     /**
      * Get the products price unit.
-     * 
+     *
      * @param  string $value
      * @return Marktstand\Support\Unit
      */
@@ -93,7 +93,7 @@ class Product extends Model
 
     /**
      * Get the products volume unit.
-     * 
+     *
      * @param  string $value
      * @return Marktstand\Support\Unit
      */
@@ -104,23 +104,25 @@ class Product extends Model
 
     /**
      * Get the shop price.
-     * 
-     * @return integer
+     *
+     * @return int
      */
     public function getTotalPrice()
     {
         $commission = new Commission($this->price()->value());
+
         return $commission->total();
     }
 
     /**
      * Get the shop base price.
-     * 
-     * @return integer
+     *
+     * @return int
      */
     public function getTotalBasePrice()
     {
         $commission = new Commission($this->price()->base());
+
         return $commission->total();
     }
 }

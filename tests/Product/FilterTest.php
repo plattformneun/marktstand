@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Exceptions\DuplicateSlugException;
 use Marktstand\Product\Filter;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
+use Marktstand\Product\Product;
+use Marktstand\Exceptions\DuplicateSlugException;
 
 class FilterTest extends TestCase
 {
@@ -19,7 +19,7 @@ class FilterTest extends TestCase
 
         $this->assertDatabaseHas('filter_product', [
             'filter_id' => $filter->id,
-            'product_id' => $product->id
+            'product_id' => $product->id,
         ]);
 
         $this->assertCount(1, $filter->products);
@@ -29,7 +29,7 @@ class FilterTest extends TestCase
     public function it_generates_a_slug()
     {
         $filter = Filter::forceCreate([
-            'title' => 'Peanuts'
+            'title' => 'Peanuts',
         ]);
 
         $this->assertEquals('peanuts', $filter->slug);
@@ -42,11 +42,11 @@ class FilterTest extends TestCase
 
         factory(Filter::class)->create([
             'title' => 'Peanuts',
-            'slug' => 'peanuts'
+            'slug' => 'peanuts',
         ]);
 
         $filter = Filter::forceCreate([
-            'title' => 'Peanuts'
+            'title' => 'Peanuts',
         ]);
     }
 
@@ -55,22 +55,22 @@ class FilterTest extends TestCase
     {
         factory(Filter::class)->create([
             'title' => 'Peanuts',
-            'slug' => 'peanuts'
+            'slug' => 'peanuts',
         ]);
 
         factory(Filter::class)->create([
             'title' => 'Eggs',
-            'slug' => 'eggs'
+            'slug' => 'eggs',
         ]);
 
         factory(Filter::class)->create([
             'title' => 'Fish',
-            'slug' => 'fish'
+            'slug' => 'fish',
         ]);
 
         factory(Filter::class)->create([
             'title' => 'Cheese',
-            'slug' => 'cheese'
+            'slug' => 'cheese',
         ]);
 
         $filters = Filter::allFromSlugs(['peanuts', 'eggs', 'fish']);
@@ -83,22 +83,22 @@ class FilterTest extends TestCase
     {
         factory(Filter::class)->create([
             'title' => 'Peanuts',
-            'slug' => 'peanuts'
+            'slug' => 'peanuts',
         ]);
 
         factory(Filter::class)->create([
             'title' => 'Eggs',
-            'slug' => 'eggs'
+            'slug' => 'eggs',
         ]);
 
         factory(Filter::class)->create([
             'title' => 'Fish',
-            'slug' => 'fish'
+            'slug' => 'fish',
         ]);
 
         factory(Filter::class)->create([
             'title' => 'Cheese',
-            'slug' => 'cheese'
+            'slug' => 'cheese',
         ]);
 
         $filters = Filter::exceptFromSlugs(['peanuts', 'eggs', 'fish']);

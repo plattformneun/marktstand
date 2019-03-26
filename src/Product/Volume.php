@@ -2,9 +2,6 @@
 
 namespace Marktstand\Product;
 
-use Illuminate\Support\Facades\Config;
-use Marktstand\Exceptions\InvalidArgumentException;
-
 class Volume
 {
     /**
@@ -22,7 +19,7 @@ class Volume
 
     /**
      * Get the volume from base.
-     * 
+     *
      * @return Number
      */
     public function base()
@@ -32,7 +29,7 @@ class Volume
 
     /**
      * Get the volume unit.
-     * 
+     *
      * @return Marktstand\Support\Unit
      */
     public function unit()
@@ -42,8 +39,8 @@ class Volume
 
     /**
      * Get the value.
-     * 
-     * @return integer
+     *
+     * @return int
      */
     public function value()
     {

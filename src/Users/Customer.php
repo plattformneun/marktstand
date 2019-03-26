@@ -2,20 +2,20 @@
 
 namespace Marktstand\Users;
 
-use Illuminate\Foundation\Auth\User;
-use Marktstand\Access\Verifiable;
 use Marktstand\Checkout\Cart;
+use Marktstand\Access\Verifiable;
+use Illuminate\Foundation\Auth\User;
 use Marktstand\Payment\HasBankAccounts;
 
 class Customer extends User
 {
-   use HasBankAccounts, Verifiable;
+    use HasBankAccounts, Verifiable;
 
-   /**
-    * The customers cart.
-    */
-   public function cart()
-   {
-      return $this->hasOne(Cart::class);
-   }
+    /**
+     * The customers cart.
+     */
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
+    }
 }

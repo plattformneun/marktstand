@@ -2,8 +2,8 @@
 
 namespace Marktstand\Product;
 
-use Illuminate\Database\Eloquent\Model;
 use Marktstand\Support\Slugable;
+use Illuminate\Database\Eloquent\Model;
 
 class Quality extends Model
 {
@@ -25,7 +25,7 @@ class Quality extends Model
 
     /**
      * Query the products.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function products()

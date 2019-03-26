@@ -2,7 +2,6 @@
 
 namespace Marktstand\Product;
 
-use Illuminate\Support\Facades\Config;
 use Marktstand\Exceptions\InvalidArgumentException;
 
 class Price
@@ -22,12 +21,12 @@ class Price
 
     /**
      * Get the price value from base.
-     * 
-     * @return integer
+     *
+     * @return int
      */
     public function base()
     {
-        if($this->product->unit->type() === $this->unit()->type()) {
+        if ($this->product->unit->type() === $this->unit()->type()) {
             return (int) round($this->product->price / $this->product->volume()->value() * $this->product->volume()->unit()->factor());
         }
 
@@ -36,7 +35,7 @@ class Price
 
     /**
      * Get the price unit.
-     * 
+     *
      * @return Marktstand\Support\Unit
      */
     public function unit()
@@ -46,16 +45,16 @@ class Price
 
     /**
      * Get the products price.
-     * 
-     * @return integer
+     *
+     * @return int
      */
     public function value()
     {
-        if($this->product->unit->type() === $this->unit()->type()) {
+        if ($this->product->unit->type() === $this->unit()->type()) {
             return $this->product->price;
         }
 
-        if($this->product->volume()->unit()->base() !== $this->unit()->base()) {
+        if ($this->product->volume()->unit()->base() !== $this->unit()->base()) {
             throw new InvalidArgumentException('The price unit does not match the product unit.');
         }
 

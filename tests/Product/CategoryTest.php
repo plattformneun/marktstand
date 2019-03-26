@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Exceptions\DuplicateSlugException;
-use Marktstand\Product\Category;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
+use Marktstand\Product\Product;
+use Marktstand\Product\Category;
+use Marktstand\Exceptions\DuplicateSlugException;
 
 class CategoryTest extends TestCase
 {
@@ -15,13 +15,13 @@ class CategoryTest extends TestCase
         factory(Category::class)->create([
             'title' => 'Vegetables',
             'slug' => 'vegetables',
-            'parent_id' => null
+            'parent_id' => null,
         ]);
 
         factory(Category::class)->create([
             'title' => 'Fruits',
             'slug' => 'fruits',
-            'parent_id' => null
+            'parent_id' => null,
         ]);
 
         $this->assertCount(2, Category::main()->get());
@@ -38,13 +38,13 @@ class CategoryTest extends TestCase
         factory(Category::class)->create([
             'title' => 'Apples',
             'slug' => 'apples',
-            'parent_id' => $parent->id
+            'parent_id' => $parent->id,
         ]);
 
         factory(Category::class)->create([
             'title' => 'Berries',
             'slug' => 'berries',
-            'parent_id' => $parent->id
+            'parent_id' => $parent->id,
         ]);
 
         $this->assertCount(2, $parent->childrens);
@@ -61,7 +61,7 @@ class CategoryTest extends TestCase
         $child = factory(Category::class)->create([
             'title' => 'Apples',
             'slug' => 'apples',
-            'parent_id' => $parent->id
+            'parent_id' => $parent->id,
         ]);
 
         $this->assertEquals($parent->id, $child->parent->id);
@@ -77,7 +77,7 @@ class CategoryTest extends TestCase
 
         $this->assertDatabaseHas('category_product', [
             'category_id' => $category->id,
-            'product_id' => $product->id
+            'product_id' => $product->id,
         ]);
 
         $this->assertCount(1, $category->products);
@@ -87,7 +87,7 @@ class CategoryTest extends TestCase
     public function it_generates_a_slug()
     {
         $category = Category::forceCreate([
-            'title' => 'Organic Bananas'
+            'title' => 'Organic Bananas',
         ]);
 
         $this->assertEquals('organic-bananas', $category->slug);
@@ -100,11 +100,11 @@ class CategoryTest extends TestCase
 
         factory(Category::class)->create([
             'title' => 'Organic Bananas',
-            'slug' => 'organic-bananas'
+            'slug' => 'organic-bananas',
         ]);
 
         $category = Category::forceCreate([
-            'title' => 'Organic Bananas'
+            'title' => 'Organic Bananas',
         ]);
     }
 }

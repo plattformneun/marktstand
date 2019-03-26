@@ -1,7 +1,7 @@
 <?php
 
-use Marktstand\Product\Product;
 use Marktstand\Users\Producer;
+use Marktstand\Product\Product;
 
 $factory->define(Product::class, function () {
     return [
@@ -12,8 +12,8 @@ $factory->define(Product::class, function () {
         'price' => '1500',
         'price_unit' => 'kg',
         'vat' => 7,
-        'producer_id' => function() {
+        'producer_id' => function () {
             return factory(Producer::class)->create()->id;
-        }
+        },
     ];
 });

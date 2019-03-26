@@ -2,7 +2,6 @@
 
 namespace Marktstand\Tests;
 
-
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
@@ -11,14 +10,14 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function setUp() : void
     {
         parent::setUp();
-        
+
         $this->withFactories(__DIR__.'/../database/factories');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     /**
-     * Load package service provider
-     * 
+     * Load package service provider.
+     *
      * @param  \Illuminate\Foundation\Application $app
      * @return lasselehtinen\MyPackage\MyPackageServiceProvider
      */

@@ -8,7 +8,7 @@ trait Slugable
 {
     /**
      * Generate the slug.
-     * 
+     *
      * @param  string $value
      * @return void
      */
@@ -16,16 +16,16 @@ trait Slugable
     {
         $slug = (string) new Slug($value);
 
-        if($this->slugExists($slug)) {
+        if ($this->slugExists($slug)) {
             throw new DuplicateSlugException(sprintf('Model with a slug "%s" already exists', $slug));
         }
-        
+
         $this->slug = $slug;
     }
 
     /**
      * Get the models from an array of slugs.
-     * 
+     *
      * @param  array  $slugs
      * @return Illuminate\Support\Collection
      */
@@ -36,7 +36,7 @@ trait Slugable
 
     /**
      * Get all models except the given array of slugs.
-     * 
+     *
      * @param  array  $slugs
      * @return Illuminate\Support\Collection
      */
@@ -47,9 +47,9 @@ trait Slugable
 
     /**
      * Check if the slug already exists.
-     * 
+     *
      * @param  string $slug
-     * @return Boolean
+     * @return bool
      */
     public static function slugExists(string $slug)
     {

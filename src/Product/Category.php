@@ -2,8 +2,8 @@
 
 namespace Marktstand\Product;
 
-use Illuminate\Database\Eloquent\Model;
 use Marktstand\Support\Slugable;
+use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
@@ -25,7 +25,7 @@ class Category extends Model
 
     /**
      * Query the main categories.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public static function main()
@@ -35,27 +35,27 @@ class Category extends Model
 
     /**
      * Query the main subcategories.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function childrens()
     {
-        return $this->hasMany(Category::class, 'parent_id');
+        return $this->hasMany(self::class, 'parent_id');
     }
 
     /**
      * Query the parent category.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function parent()
     {
-        return $this->belongsTo(Category::class, 'parent_id');
+        return $this->belongsTo(self::class, 'parent_id');
     }
 
     /**
      * Query the products.
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Builder
      */
     public function products()

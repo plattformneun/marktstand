@@ -124,7 +124,7 @@ class BankAccountNumber
 
     /**
      * Get the country code.
-     * 
+     *
      * @return string
      */
     public function countryCode()
@@ -134,7 +134,7 @@ class BankAccountNumber
 
     /**
      * Get the iban.
-     * 
+     *
      * @return string
      */
     public function iban()
@@ -144,7 +144,7 @@ class BankAccountNumber
 
     /**
      * Get the last four digits.
-     * 
+     *
      * @return string
      */
     public function lastFour()
@@ -154,7 +154,7 @@ class BankAccountNumber
 
     /**
      * Canonicalize the given value.
-     * 
+     *
      * @param  string $iban
      * @return string
      */
@@ -165,7 +165,7 @@ class BankAccountNumber
 
     /**
      * Get the matching regular expression format.
-     * 
+     *
      * @return string
      */
     protected function format()
@@ -175,12 +175,12 @@ class BankAccountNumber
 
     /**
      * Validate the given value.
-     * 
+     *
      * @return void
      */
     protected function validate()
     {
-        if (!ctype_alnum($this->iban)) {
+        if (! ctype_alnum($this->iban)) {
             throw new InvalidArgumentException('Invalid Characters');
         }
 
@@ -195,7 +195,7 @@ class BankAccountNumber
 
     /**
      * Cast the object to an reinitialisable string.
-     * 
+     *
      * @return string
      */
     public function __toString()

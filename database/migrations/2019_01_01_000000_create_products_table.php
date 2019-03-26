@@ -26,13 +26,13 @@ class CreateProductsTable extends Migration
             $table->smallInteger('volume')->unsigned();
             $table->string('volume_unit', 12);
             $table->integer('price')->unsigned();
-            $table->string('price_unit', 12);        
+            $table->string('price_unit', 12);
             $table->tinyInteger('vat')->unsigned();
             $table->string('packaging', 32)->nullable();
             $table->text('ingredients')->nullable();
             $table->integer('expiration')->unsigned()->nullable();
             $table->smallInteger('lead_time')->nullable();
-            $table->integer('deposit')->unsigned()->nullable();         
+            $table->integer('deposit')->unsigned()->nullable();
             $table->timestamps();
         });
     }

@@ -34,4 +34,4 @@ class CreateProducersTable extends Migration
     {
         Schema::dropIfExists('producers');
     }
-} 
+}

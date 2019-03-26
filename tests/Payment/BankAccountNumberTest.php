@@ -2,9 +2,9 @@
 
 namespace Marktstand\Tests\Payment;
 
-use Marktstand\Exceptions\InvalidArgumentException;
-use Marktstand\Payment\BankAccountNumber;
 use Marktstand\Tests\TestCase;
+use Marktstand\Payment\BankAccountNumber;
+use Marktstand\Exceptions\InvalidArgumentException;
 
 class BankAccountNumberTest extends TestCase
 {

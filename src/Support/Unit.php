@@ -46,9 +46,10 @@ class Unit
      */
     protected function config(string $key)
     {
-        if(! $this->config) {
-            $this->config = Config::get('marktstand.units.' . $this->type);
+        if (! $this->config) {
+            $this->config = Config::get('marktstand.units.'.$this->type);
         }
+
         return $this->config[$key];
     }
 }

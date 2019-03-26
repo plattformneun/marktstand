@@ -2,8 +2,6 @@
 
 namespace Marktstand\Payment;
 
-use Marktstand\Payment\BankAccount;
-
 trait HasBankAccounts
 {
     /**
@@ -11,6 +9,6 @@ trait HasBankAccounts
      */
     public function bankAccounts()
     {
-       return $this->morphMany(BankAccount::class, 'user');
+        return $this->morphMany(BankAccount::class, 'user');
     }
 }

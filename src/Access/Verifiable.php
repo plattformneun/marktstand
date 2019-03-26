@@ -3,15 +3,15 @@
 namespace Marktstand\Access;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Event;
 use Marktstand\Events\UserVerified;
+use Illuminate\Support\Facades\Event;
 use Marktstand\Events\VerificationRequest;
 
 trait Verifiable
 {
     /**
      * Verify the user.
-     * 
+     *
      * @return void
      */
     public function verify()
@@ -24,7 +24,7 @@ trait Verifiable
 
     /**
      * Request to be verified.
-     * 
+     *
      * @return void
      */
     public function requestVerification()
@@ -34,12 +34,11 @@ trait Verifiable
 
     /**
      * Check if the user has been verified.
-     * 
-     * @return boolean
+     *
+     * @return bool
      */
     public function isVerified()
     {
-        return !! $this->verified_at;
+        return (bool) $this->verified_at;
     }
-
 }

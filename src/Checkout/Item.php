@@ -2,8 +2,8 @@
 
 namespace Marktstand\Checkout;
 
-use Illuminate\Database\Eloquent\Model;
 use Marktstand\Product\Product;
+use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
@@ -17,7 +17,7 @@ class Item extends Model
 
     /**
      * Get the price.
-     * 
+     *
      * @return Marktstand\Product\Price
      */
     public function price()

@@ -16,7 +16,7 @@ class CartTest extends TestCase
         factory(Item::class, 10)->create([
             'product_id' => 1,
             'checkout_id' => $cart->id,
-            'checkout_type' => 'cart'
+            'checkout_type' => 'cart',
         ]);
 
         $this->assertCount(10, $cart->items);

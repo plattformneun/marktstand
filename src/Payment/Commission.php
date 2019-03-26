@@ -2,18 +2,18 @@
 
 namespace Marktstand\Payment;
 
-use Illuminate\Support\Facades\Config;
 use Marktstand\Contracts\Price;
+use Illuminate\Support\Facades\Config;
 
 class Commission
 {
     /**
-     * @var integer
+     * @var int
      */
     protected $factor;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $price;
 
@@ -28,7 +28,7 @@ class Commission
 
     /**
      * Get the factor.
-     * 
+     *
      * @return float
      */
     public function factor()
@@ -38,8 +38,8 @@ class Commission
 
     /**
      * Get the commision value from price.
-     * 
-     * @return integer
+     *
+     * @return int
      */
     public function value()
     {
@@ -48,8 +48,8 @@ class Commission
 
     /**
      * Get the total price including the commision.
-     * 
-     * @return integer
+     *
+     * @return int
      */
     public function total()
     {
@@ -58,13 +58,14 @@ class Commission
 
     /**
      * Subtract the commission from the given price.
-     * 
+     *
      * @param  int    $price
-     * @return integer
+     * @return int
      */
     public static function subtract(int $price)
     {
         $commission = new static($price);
+
         return $price - $commission->value();
     }
 }

@@ -19,10 +19,10 @@ class ServiceProvider extends BaseServiceProvider
         $this->publishes([
             $this->path('config/marktstand.php') => config_path('marktstand.php'),
         ]);
-        
+
         $this->loadMigrationsFrom(
             $this->path('database/migrations')
-        ); 
+        );
     }
 
     /**
@@ -37,7 +37,7 @@ class ServiceProvider extends BaseServiceProvider
 
     /**
      * Map polymorphic relations.
-     * 
+     *
      * @return void
      */
     protected function mapRelations()
@@ -51,12 +51,12 @@ class ServiceProvider extends BaseServiceProvider
 
     /**
      * Get the full path.
-     * 
+     *
      * @param  string $path
      * @return string
      */
     protected function path(string $path)
     {
-        return __DIR__ . '//..//' . $path;
+        return __DIR__.'//..//'.$path;
     }
 }

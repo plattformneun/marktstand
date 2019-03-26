@@ -2,10 +2,9 @@
 
 namespace Marktstand\Tests\Product;
 
-use Illuminate\Support\Facades\Config;
 use Marktstand\Product\Price;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
+use Marktstand\Product\Product;
 
 class PriceTest extends TestCase
 {

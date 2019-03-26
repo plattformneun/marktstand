@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Exceptions\DuplicateSlugException;
-use Marktstand\Product\Quality;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
+use Marktstand\Product\Product;
+use Marktstand\Product\Quality;
+use Marktstand\Exceptions\DuplicateSlugException;
 
 class QualityTest extends TestCase
 {
@@ -19,7 +19,7 @@ class QualityTest extends TestCase
 
         $this->assertDatabaseHas('product_quality', [
             'quality_id' => $quality->id,
-            'product_id' => $product->id
+            'product_id' => $product->id,
         ]);
 
         $this->assertCount(1, $quality->products);
@@ -29,7 +29,7 @@ class QualityTest extends TestCase
     public function it_generates_a_slug()
     {
         $quality = Quality::forceCreate([
-            'title' => 'Demeter'
+            'title' => 'Demeter',
         ]);
 
         $this->assertEquals('demeter', $quality->slug);
@@ -42,11 +42,11 @@ class QualityTest extends TestCase
 
         factory(Quality::class)->create([
             'title' => 'Demeter',
-            'slug' => 'demeter'
+            'slug' => 'demeter',
         ]);
 
         $quality = Quality::forceCreate([
-            'title' => 'Demeter'
+            'title' => 'Demeter',
         ]);
     }
 
@@ -55,12 +55,12 @@ class QualityTest extends TestCase
     {
         factory(Quality::class)->create([
             'title' => 'Demeter',
-            'slug' => 'demeter'
+            'slug' => 'demeter',
         ]);
 
         factory(Quality::class)->create([
             'title' => 'Organic',
-            'slug' => 'organic'
+            'slug' => 'organic',
         ]);
 
         $qualities = Quality::allFromSlugs(['demeter']);

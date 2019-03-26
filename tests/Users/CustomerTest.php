@@ -2,13 +2,13 @@
 
 namespace Marktstand\Tests\Users;
 
-use Illuminate\Support\Facades\Event;
 use Marktstand\Checkout\Cart;
-use Marktstand\Events\UserVerified;
-use Marktstand\Events\VerificationRequest;
-use Marktstand\Payment\BankAccount;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Customer;
+use Marktstand\Events\UserVerified;
+use Marktstand\Payment\BankAccount;
+use Illuminate\Support\Facades\Event;
+use Marktstand\Events\VerificationRequest;
 
 class CustomerTest extends TestCase
 {
@@ -18,12 +18,12 @@ class CustomerTest extends TestCase
         $customer = factory(Customer::class)->create();
         factory(BankAccount::class)->create([
             'user_id' => $customer->id,
-            'user_type' => 'customer'
+            'user_type' => 'customer',
         ]);
 
         factory(BankAccount::class)->create([
             'user_id' => $customer->id,
-            'user_type' => 'customer'
+            'user_type' => 'customer',
         ]);
 
         $this->assertCount(2, $customer->bankAccounts);
@@ -44,7 +44,7 @@ class CustomerTest extends TestCase
         Event::fake();
 
         $customer = factory(Customer::class)->create([
-            'verified_at' => null
+            'verified_at' => null,
         ]);
 
         $this->assertFalse($customer->isVerified());

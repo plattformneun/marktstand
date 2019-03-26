@@ -2,8 +2,8 @@
 
 namespace Marktstand\Validation\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Contracts\Validation\Rule;
 
 class Unit implements Rule
 {
@@ -26,6 +26,6 @@ class Unit implements Rule
      */
     public function message()
     {
-         return trans('validation.unit');
+        return trans('validation.unit');
     }
 }

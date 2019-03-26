@@ -54,7 +54,7 @@ class BankAccountCode
 
     /**
      * Get the country code.
-     * 
+     *
      * @return string
      */
     public function countryCode()
@@ -64,7 +64,7 @@ class BankAccountCode
 
     /**
      * Get the swift.
-     * 
+     *
      * @return string
      */
     public function swift()
@@ -74,7 +74,7 @@ class BankAccountCode
 
     /**
      * Canonicalize the given value.
-     * 
+     *
      * @param  string $iban
      * @return string
      */
@@ -85,7 +85,7 @@ class BankAccountCode
 
     /**
      * Get the matching regular expression format.
-     * 
+     *
      * @return string
      */
     protected function format()
@@ -95,12 +95,12 @@ class BankAccountCode
 
     /**
      * Validate the given value.
-     * 
+     *
      * @return void
      */
     protected function validate()
     {
-        if (!ctype_alnum($this->swift)) {
+        if (! ctype_alnum($this->swift)) {
             throw new InvalidArgumentException('Invalid Characters');
         }
 
@@ -115,7 +115,7 @@ class BankAccountCode
 
     /**
      * Cast the object to an reinitialisable string.
-     * 
+     *
      * @return string
      */
     public function __toString()
