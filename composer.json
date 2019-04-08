@@ -1,0 +1,33 @@
+{
+    "name": "tobiasthaden/marktstand",
+    "description": "A laravel package to provide a shop in shop in plattform",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Thaden",
+            "email": "tt@convoyinteractive.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marktstand\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Marktstand\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marktstand\\ServiceProvider"
+            ]
+        }
+    }
+}
