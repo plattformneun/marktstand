@@ -2,14 +2,14 @@
 
 namespace Marktstand\Tests\Users;
 
-use Illuminate\Support\Facades\Event;
 use Marktstand\Checkout\Cart;
-use Marktstand\Company\Company;
-use Marktstand\Events\UserVerified;
-use Marktstand\Events\VerificationRequest;
-use Marktstand\Payment\BankAccount;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Customer;
+use Marktstand\Company\Company;
+use Marktstand\Events\UserVerified;
+use Marktstand\Payment\BankAccount;
+use Illuminate\Support\Facades\Event;
+use Marktstand\Events\VerificationRequest;
 
 class CustomerTest extends TestCase
 {
@@ -34,7 +34,7 @@ class CustomerTest extends TestCase
     public function it_may_has_a_company()
     {
         $customer = factory(Customer::class)->create();
-        
+
         $company = factory(Company::class)->create([
             'user_id' => $customer->id,
             'user_type' => 'customer',

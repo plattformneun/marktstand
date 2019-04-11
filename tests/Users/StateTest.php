@@ -3,11 +3,11 @@
 namespace Marktstand\Tests\Users;
 
 use Carbon\Carbon;
-use Marktstand\Company\Company;
-use Marktstand\Payment\BankAccount;
+use Marktstand\Users\State;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
-use Marktstand\Users\State;
+use Marktstand\Company\Company;
+use Marktstand\Payment\BankAccount;
 
 class StateTest extends TestCase
 {
