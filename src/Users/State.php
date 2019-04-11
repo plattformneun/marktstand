@@ -21,18 +21,18 @@ class State
 
     /**
      * Check if the user has bank accounts.
-     * 
-     * @return boolean
+     *
+     * @return bool
      */
     public function hasBankAccounts()
     {
-        return !! $this->user->bankAccounts()->count();
+        return (bool) $this->user->bankAccounts()->count();
     }
 
     /**
      * Check if the user is verified.
-     * 
-     * @return boolean
+     *
+     * @return bool
      */
     public function isVerified()
     {

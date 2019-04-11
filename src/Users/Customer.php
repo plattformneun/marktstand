@@ -27,7 +27,7 @@ class Customer extends User
 
     /**
      * Get the users state.
-     * 
+     *
      * @return Marktstand\Users\State
      */
     public function state()

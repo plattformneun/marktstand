@@ -3,10 +3,10 @@
 namespace Marktstand\Tests\Users;
 
 use Carbon\Carbon;
-use Marktstand\Payment\BankAccount;
+use Marktstand\Users\State;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
-use Marktstand\Users\State;
+use Marktstand\Payment\BankAccount;
 
 class StateTest extends TestCase
 {
@@ -14,7 +14,7 @@ class StateTest extends TestCase
     public function it_may_be_verified()
     {
         $producer = factory(Producer::class)->create([
-            'verified_at' => Carbon::now()
+            'verified_at' => Carbon::now(),
         ]);
 
         $this->assertTrue($this->state($producer)->isVerified());
