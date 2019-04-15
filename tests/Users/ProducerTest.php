@@ -2,14 +2,14 @@
 
 namespace Marktstand\Tests\Users;
 
-use Illuminate\Support\Facades\Event;
-use Marktstand\Company\Company;
-use Marktstand\Events\UserVerified;
-use Marktstand\Events\VerificationRequest;
-use Marktstand\Payment\BankAccount;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
+use Marktstand\Company\Company;
+use Marktstand\Product\Product;
+use Marktstand\Events\UserVerified;
+use Marktstand\Payment\BankAccount;
+use Illuminate\Support\Facades\Event;
+use Marktstand\Events\VerificationRequest;
 
 class ProducerTest extends TestCase
 {
@@ -43,7 +43,7 @@ class ProducerTest extends TestCase
     public function it_may_has_a_company()
     {
         $producer = factory(Producer::class)->create();
-        
+
         $company = factory(Company::class)->create([
             'user_id' => $producer->id,
             'user_type' => 'producer',

@@ -2,10 +2,10 @@
 
 namespace Marktstand\Checkout;
 
-use Illuminate\Database\Eloquent\Model;
-use Marktstand\Contracts\Checkout;
 use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
+use Marktstand\Contracts\Checkout;
+use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model implements Checkout
 {
@@ -13,7 +13,7 @@ class Order extends Model implements Checkout
 
     /**
      * Create new orders from cart.
-     * 
+     *
      * @param  Cart   $cart
      * @return void
      */
@@ -21,15 +21,15 @@ class Order extends Model implements Checkout
     {
         $customerId = $cart->customer->id;
 
-        $cart->itemsPerProducer()->each(function($items, $producerId) use ($customerId) {
+        $cart->itemsPerProducer()->each(function ($items, $producerId) use ($customerId) {
             self::unguard();
-            
+
             $order = self::create([
                 'customer_id' => $customerId,
                 'producer_id' => $producerId,
             ]);
 
-            $items->each(function($item) use ($order) {
+            $items->each(function ($item) use ($order) {
                 $item->unguard();
 
                 $item->transform($order);

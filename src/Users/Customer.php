@@ -2,13 +2,13 @@
 
 namespace Marktstand\Users;
 
-use Illuminate\Foundation\Auth\User;
-use Marktstand\Access\Verifiable;
 use Marktstand\Checkout\Cart;
+use Marktstand\Access\Verifiable;
 use Marktstand\Checkout\HasOrders;
 use Marktstand\Company\HasCompany;
-use Marktstand\Payment\HasBankAccounts;
 use Marktstand\Support\Reflectable;
+use Illuminate\Foundation\Auth\User;
+use Marktstand\Payment\HasBankAccounts;
 
 class Customer extends User
 {

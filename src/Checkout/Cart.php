@@ -2,9 +2,9 @@
 
 namespace Marktstand\Checkout;
 
-use Illuminate\Database\Eloquent\Model;
-use Marktstand\Contracts\Checkout;
 use Marktstand\Users\Customer;
+use Marktstand\Contracts\Checkout;
+use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model implements Checkout
 {
@@ -30,7 +30,7 @@ class Cart extends Model implements Checkout
      */
     public function itemsPerProducer()
     {
-        return $this->items->groupBy(function($item) {
+        return $this->items->groupBy(function ($item) {
             return $item->producer->id;
         });
     }

@@ -2,8 +2,8 @@
 
 namespace Marktstand\Users;
 
-use Illuminate\Foundation\Auth\User;
 use Marktstand\Company\Company;
+use Illuminate\Foundation\Auth\User;
 
 class State
 {

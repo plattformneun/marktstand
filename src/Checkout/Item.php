@@ -2,9 +2,9 @@
 
 namespace Marktstand\Checkout;
 
-use Illuminate\Database\Eloquent\Model;
-use Marktstand\Contracts\Checkout;
 use Marktstand\Product\Product;
+use Marktstand\Contracts\Checkout;
+use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {

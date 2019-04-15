@@ -5,9 +5,9 @@ namespace Marktstand\Tests\Checkout;
 use Marktstand\Checkout\Cart;
 use Marktstand\Checkout\Item;
 use Marktstand\Checkout\Order;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
+use Marktstand\Product\Product;
 
 class OrderTest extends TestCase
 {
@@ -16,20 +16,20 @@ class OrderTest extends TestCase
     {
         $producerA = factory(Producer::class)->create([
             'id' => 10,
-            'email' => 'johndoe@example.com'
+            'email' => 'johndoe@example.com',
         ]);
 
         $producerB = factory(Producer::class)->create([
             'id' => 50,
-            'email' => 'janedoe@example.com'
+            'email' => 'janedoe@example.com',
         ]);
 
         $productA = factory(Product::class)->create([
-            'producer_id' => $producerA->id
+            'producer_id' => $producerA->id,
         ]);
 
         $productB = factory(Product::class)->create([
-            'producer_id' => $producerB->id
+            'producer_id' => $producerB->id,
         ]);
 
         $cart = factory(Cart::class)->create();

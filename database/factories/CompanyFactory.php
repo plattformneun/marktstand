@@ -13,6 +13,6 @@ $factory->define(Company::class, function () {
         'country' => 'DE',
         'vat_id' => 'DE123456789',
         'user_id' => 1,
-        'user_type' => 'customer'
+        'user_type' => 'customer',
     ];
 });
