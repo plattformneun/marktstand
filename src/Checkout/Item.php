@@ -38,7 +38,7 @@ class Item extends Model
 
     /**
      * Transform the item to the given checkout type.
-     * 
+     *
      * @param  Checkout $checkout
      * @return void
      */

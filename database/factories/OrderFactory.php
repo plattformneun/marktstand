@@ -1,8 +1,8 @@
 <?php
 
+use Marktstand\Checkout\Order;
 use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
-use Marktstand\Checkout\Order;
 
 $factory->define(Order::class, function () {
     return [

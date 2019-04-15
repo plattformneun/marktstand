@@ -47,7 +47,7 @@ class Order extends Model implements Checkout
 
     /**
      * Attach the given item to the order.
-     * 
+     *
      * @param Item $item
      */
     public function addItem(Item $item)
