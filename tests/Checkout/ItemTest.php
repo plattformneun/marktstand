@@ -3,7 +3,6 @@
 namespace Marktstand\Tests\Checkout;
 
 use Marktstand\Checkout\Item;
-use Marktstand\Product\Price;
 use Marktstand\Tests\TestCase;
 use Marktstand\Product\Product;
 

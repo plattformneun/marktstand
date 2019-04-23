@@ -4,7 +4,6 @@ namespace Marktstand\Tests\Checkout;
 
 use Marktstand\Checkout\Cart;
 use Marktstand\Checkout\Item;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 
 class CartTest extends TestCase
