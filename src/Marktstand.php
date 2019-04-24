@@ -2,8 +2,6 @@
 
 namespace Marktstand;
 
-use Marktstand\Users;
-
 class Marktstand
 {
     /**
@@ -14,7 +12,7 @@ class Marktstand
      */
     public function registerCustomer(array $data)
     {
-        return $this->fillUser(new Users\Customer, $data);    
+        return $this->fillUser(new Users\Customer, $data);
     }
 
     /**
@@ -25,7 +23,7 @@ class Marktstand
      */
     public function registerProducer(array $data)
     {
-        return $this->fillUser(new Users\Producer, $data);    
+        return $this->fillUser(new Users\Producer, $data);
     }
 
     /**

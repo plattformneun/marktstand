@@ -34,7 +34,7 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->mergeConfigFrom($this->path('config/marktstand.php'), 'marktstand');
 
-        $this->app->bind('marktstand', function() {
+        $this->app->bind('marktstand', function () {
             return new Marktstand;
         });
     }
