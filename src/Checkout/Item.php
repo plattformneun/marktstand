@@ -2,16 +2,16 @@
 
 namespace Marktstand\Checkout;
 
-use Illuminate\Database\Eloquent\Model;
+use Marktstand\Product\Product;
 use Marktstand\Contracts\Checkout;
 use Marktstand\Payment\Commission;
-use Marktstand\Product\Product;
+use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
     /**
      * Get the product items price.
-     * 
+     *
      * @return int
      */
     public function getPriceAttribute()
@@ -21,7 +21,7 @@ class Item extends Model
 
     /**
      * Get the product items total price.
-     * 
+     *
      * @return int
      */
     public function getTotalAttribute()

@@ -20,8 +20,8 @@ class ItemGroupsTest extends TestCase
             'quantity' => 5,
             'product_id' => factory(Product::class)->create([
                 'producer_id' => factory(Producer::class)->create([
-                    'email' => 'jane@example.com'
-                ])->id
+                    'email' => 'jane@example.com',
+                ])->id,
             ]),
             'checkout_id' => $checkout->id,
             'checkout_type' => $checkout->type,
@@ -31,8 +31,8 @@ class ItemGroupsTest extends TestCase
             'quantity' => 5,
             'product_id' => factory(Product::class)->create([
                 'producer_id' => factory(Producer::class)->create([
-                    'email' => 'john@example.com'
-                ])->id
+                    'email' => 'john@example.com',
+                ])->id,
             ]),
             'checkout_id' => $checkout->id,
             'checkout_type' => $checkout->type,
@@ -59,7 +59,7 @@ class ItemGroupsTest extends TestCase
                 'price' => 1000,
                 'price_unit' => 'kg',
                 'vat' => 7,
-                'producer_id' => $producer->id
+                'producer_id' => $producer->id,
             ]),
             'checkout_id' => $checkout->id,
             'checkout_type' => $checkout->type,
@@ -73,7 +73,7 @@ class ItemGroupsTest extends TestCase
                 'volume_unit' => 'ml',
                 'price' => 100,
                 'price_unit' => 'portion',
-                'producer_id' => $producer->id
+                'producer_id' => $producer->id,
             ]),
             'checkout_id' => $checkout->id,
             'checkout_type' => $checkout->type,

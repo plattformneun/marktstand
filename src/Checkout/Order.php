@@ -83,7 +83,7 @@ class Order extends Model implements Checkout
 
     /**
      * Get the total price of the order.
-     * 
+     *
      * @return int
      */
     public function total()

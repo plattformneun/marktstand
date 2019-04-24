@@ -40,7 +40,7 @@ class Cart extends Model implements Checkout
         })->map(function ($items) {
             return [
                 'items' => $items,
-                'total' => $items->sum('total')
+                'total' => $items->sum('total'),
             ];
         });
     }
