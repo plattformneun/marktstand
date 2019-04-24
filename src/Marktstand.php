@@ -94,7 +94,7 @@ class Marktstand
     public function makeBankAccountFillable($account)
     {
         return $this->setFillable($account, [
-            'holder', 'number', 'code', 'user_id', 'user_type'
+            'holder', 'number', 'code', 'user_id', 'user_type',
         ]);
     }
 
