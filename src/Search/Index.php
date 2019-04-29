@@ -28,8 +28,8 @@ abstract class Index implements Indexable
      *
      * @return string
      */
-    abstract public function getKey(); 
-    
+    abstract public function getKey();
+
     /**
      * Get the indexable attributes.
      *

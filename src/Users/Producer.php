@@ -27,9 +27,9 @@ class Producer extends User
      * @var array
      */
     protected $hidden = [
-        'password'
+        'password',
     ];
-    
+
     /**
      * Get the user type.
      *
@@ -47,7 +47,7 @@ class Producer extends User
      */
     public function getShopNameAttribute()
     {
-        if($this->company) {
+        if ($this->company) {
             return $this->company->name;
         }
     }
