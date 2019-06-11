@@ -27,7 +27,7 @@ class Customer extends User
      * @var array
      */
     protected $hidden = [
-        'password'
+        'password',
     ];
 
     /**

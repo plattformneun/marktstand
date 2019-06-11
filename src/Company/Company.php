@@ -2,7 +2,6 @@
 
 namespace Marktstand\Company;
 
-use Marktstand\Support\Slug;
 use Marktstand\Support\Image;
 use Illuminate\Database\Eloquent\Model;
 
