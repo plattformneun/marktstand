@@ -19,7 +19,7 @@ trait HasCompany
      */
     public function getCompanyNameAttribute()
     {
-        if($this->company) {
+        if ($this->company) {
             return $this->company->name;
         }
     }

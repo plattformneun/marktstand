@@ -2,8 +2,8 @@
 
 namespace Marktstand\Product;
 
-use Illuminate\Database\Eloquent\Model;
 use Marktstand\Users\Customer;
+use Illuminate\Database\Eloquent\Model;
 
 class Favourite extends Model
 {

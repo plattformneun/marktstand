@@ -11,7 +11,7 @@ class ProductIndex extends Index
      */
     public function getKey()
     {
-        return 'product:' . $this->id;
+        return 'product:'.$this->id;
     }
 
     /**

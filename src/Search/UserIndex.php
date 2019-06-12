@@ -11,7 +11,7 @@ class UserIndex extends Index
      */
     public function getKey()
     {
-        return $this->type . ':' . $this->id;
+        return $this->type.':'.$this->id;
     }
 
     /**

@@ -2,9 +2,9 @@
 
 namespace Marktstand\Tests\Search;
 
+use Marktstand\Tests\TestCase;
 use Marktstand\Product\Product;
 use Marktstand\Search\ProductIndex;
-use Marktstand\Tests\TestCase;
 
 class ProductIndexTest extends TestCase
 {
@@ -28,7 +28,7 @@ class ProductIndexTest extends TestCase
         $this->assertEquals([
             'title' => 'Rinderfilet',
             'producer' => null,
-            'price' => 1380
+            'price' => 1380,
         ], $index->toArray());
     }
 

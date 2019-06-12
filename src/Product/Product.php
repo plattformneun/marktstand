@@ -2,12 +2,12 @@
 
 namespace Marktstand\Product;
 
-use Illuminate\Database\Eloquent\Model;
-use Marktstand\Events\ProductSaved;
-use Marktstand\Payment\Commission;
-use Marktstand\Support\Imageable;
 use Marktstand\Support\Unit;
 use Marktstand\Users\Producer;
+use Marktstand\Support\Imageable;
+use Marktstand\Payment\Commission;
+use Marktstand\Events\ProductSaved;
+use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {

@@ -283,7 +283,7 @@ class Marktstand
     public function makeUserFillable($user)
     {
         return $this->setFillable($user, [
-            'email', 'firstname', 'lastname', 'password', 'username'
+            'email', 'firstname', 'lastname', 'password', 'username',
         ]);
     }
 
@@ -296,7 +296,7 @@ class Marktstand
     public function makeBankAccountFillable(Payment\BankAccount $account)
     {
         return $this->setFillable($account, [
-            'holder', 'number', 'code', 'user_id', 'user_type'
+            'holder', 'number', 'code', 'user_id', 'user_type',
         ]);
     }
 
@@ -309,7 +309,7 @@ class Marktstand
     public function makeCompanyFillable(Company\Company $company)
     {
         return $this->setFillable($company, [
-            'name', 'legal_form', 'description', 'street', 'house', 'post_code', 'city', 'country', 'vat_id', 'user_id', 'user_type', 'profile_image', 'title_image'
+            'name', 'legal_form', 'description', 'street', 'house', 'post_code', 'city', 'country', 'vat_id', 'user_id', 'user_type', 'profile_image', 'title_image',
         ]);
     }
 
@@ -322,7 +322,7 @@ class Marktstand
     public function makeContactFillable(Company\Contact $contact)
     {
         return $this->setFillable($contact, [
-            'position', 'gender', 'firstname', 'lastname', 'email', 'user_id', 'user_type'
+            'position', 'gender', 'firstname', 'lastname', 'email', 'user_id', 'user_type',
         ]);
     }
 
@@ -348,7 +348,7 @@ class Marktstand
     public function makeFavouriteFillable(Product\Favourite $favourite)
     {
         return $this->setFillable($favourite, [
-            'customer', 'product', 'customer_id', 'product_id'
+            'customer', 'product', 'customer_id', 'product_id',
         ]);
     }
 
@@ -361,7 +361,7 @@ class Marktstand
     public function makeImageFillable(Support\Image $image)
     {
         return $this->setFillable($image, [
-            'name', 'bucket', 'imageable_id', 'imageable_type'
+            'name', 'bucket', 'imageable_id', 'imageable_type',
         ]);
     }
 
@@ -374,7 +374,7 @@ class Marktstand
     public function makeProductFillable(Product\Product $product)
     {
         return $this->setFillable($product, [
-            'title', 'unit', 'volume', 'volume_unit', 'price', 'price_unit', 'vat', 'producer_id'
+            'title', 'unit', 'volume', 'volume_unit', 'price', 'price_unit', 'vat', 'producer_id',
         ]);
     }
 

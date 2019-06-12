@@ -2,16 +2,16 @@
 
 namespace Marktstand\Users;
 
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Hash;
+use Marktstand\Support\Slug;
+use Marktstand\Product\Product;
 use Marktstand\Access\Verifiable;
 use Marktstand\Checkout\HasOrders;
 use Marktstand\Company\HasCompany;
 use Marktstand\Company\HasContacts;
-use Marktstand\Payment\HasBankAccounts;
-use Marktstand\Product\Product;
 use Marktstand\Support\Reflectable;
-use Marktstand\Support\Slug;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Hash;
+use Marktstand\Payment\HasBankAccounts;
 
 class Producer extends User
 {
@@ -28,9 +28,9 @@ class Producer extends User
      * @var array
      */
     protected $hidden = [
-        'password'
+        'password',
     ];
-    
+
     /**
      * Get the user type.
      *

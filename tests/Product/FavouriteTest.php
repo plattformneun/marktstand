@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Product\Favourite;
-use Marktstand\Product\Product;
-use Marktstand\Users\Customer;
 use Marktstand\Tests\TestCase;
+use Marktstand\Users\Customer;
+use Marktstand\Product\Product;
+use Marktstand\Product\Favourite;
 
 class FavouriteTest extends TestCase
 {
@@ -17,7 +17,7 @@ class FavouriteTest extends TestCase
 
         Favourite::forceCreate([
             'customer_id' => $customer->id,
-            'product_id' => $product->id
+            'product_id' => $product->id,
         ]);
 
         $this->assertCount(1, $customer->favourites);
@@ -31,7 +31,7 @@ class FavouriteTest extends TestCase
 
         Favourite::forceCreate([
             'customer' => $customer,
-            'product' => $product
+            'product' => $product,
         ]);
 
         $this->assertCount(1, $customer->favourites);
