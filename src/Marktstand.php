@@ -132,7 +132,7 @@ class Marktstand
         $cart = new Checkout\Cart;
         $cart->customer_id = $customer->id;
         $cart->save();
-        
+
         return $cart;
     }
 
@@ -149,14 +149,14 @@ class Marktstand
         $item = Checkout\Item::where([
             'product_id' => $product->id,
             'checkout_id' => $cart->id,
-            'checkout_type' => 'cart'
+            'checkout_type' => 'cart',
         ])->first() ?: new Checkout\Item;
 
         $this->makeCheckoutItemFillable($item)->fill([
             'product_id' => $product->id,
             'checkout_id' => $cart->id,
             'checkout_type' => 'cart',
-            'quantity' => $quantity
+            'quantity' => $quantity,
         ])->save();
 
         return $cart;
@@ -352,7 +352,7 @@ class Marktstand
     public function makeAddressFillable(Support\Address $address)
     {
         return $this->setFillable($address, [
-            'recipient', 'street', 'house', 'post_code', 'city', 'country', 'owner_id', 'owner_type'
+            'recipient', 'street', 'house', 'post_code', 'city', 'country', 'owner_id', 'owner_type',
         ]);
     }
 
@@ -378,7 +378,7 @@ class Marktstand
     public function makeCheckoutItemFillable(Checkout\Item $item)
     {
         return $this->setFillable($item, [
-            'product_id', 'quantity', 'checkout_id', 'checkout_type'
+            'product_id', 'quantity', 'checkout_id', 'checkout_type',
         ]);
     }
 

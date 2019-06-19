@@ -2,7 +2,6 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Product\Price;
 use Marktstand\Tests\TestCase;
 use Marktstand\Product\Product;
 

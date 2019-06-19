@@ -117,7 +117,7 @@ class ProductTest extends TestCase
         $this->assertDatabaseHas('qualifyables', [
             'quality_id' => $quality->id,
             'qualifyable_id' => $product->id,
-            'qualifyable_type' => 'product'
+            'qualifyable_type' => 'product',
         ]);
 
         $this->assertCount(1, $product->qualities);

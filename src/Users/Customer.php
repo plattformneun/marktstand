@@ -3,8 +3,8 @@
 namespace Marktstand\Users;
 
 use Marktstand\Checkout\Cart;
-use Marktstand\Support\Address;
 use Marktstand\Product\Product;
+use Marktstand\Support\Address;
 use Marktstand\Access\Verifiable;
 use Marktstand\Checkout\HasOrders;
 use Marktstand\Company\HasCompany;
@@ -29,7 +29,7 @@ class Customer extends User
      * @var array
      */
     protected $appends = [
-        'type'
+        'type',
     ];
 
     /**

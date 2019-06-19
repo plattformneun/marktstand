@@ -58,11 +58,12 @@ class Unit implements \JsonSerializable
         return [
             'type' => $this->type(),
             'base' => $this->base(),
-            'factor' => $this->factor()
-        ];   
+            'factor' => $this->factor(),
+        ];
     }
 
-    public function jsonSerialize() {
+    public function jsonSerialize()
+    {
         return $this->toArray();
     }
 }

@@ -6,7 +6,7 @@ use Marktstand\Support\Image;
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
-{   
+{
     /**
      * Get the company owner.
      */

@@ -52,8 +52,8 @@ class State
 
     /**
      * Check if the users delivery options are set.
-     * 
-     * @return boolean
+     *
+     * @return bool
      */
     public function hasDeliveryOptions()
     {
@@ -62,7 +62,7 @@ class State
 
     /**
      * Check if the users registration progress is complete.
-     * 
+     *
      * @return bool
      */
     public function complete()
