@@ -2,10 +2,10 @@
 
 namespace Marktstand\Checkout;
 
-use Illuminate\Database\Eloquent\Model;
-use Marktstand\Product\Product;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
+use Marktstand\Product\Product;
+use Illuminate\Database\Eloquent\Model;
 
 class CartItem extends Model
 {
@@ -15,7 +15,7 @@ class CartItem extends Model
      * @var array
      */
     protected $with = [
-        'product'
+        'product',
     ];
 
     /**
@@ -43,7 +43,7 @@ class CartItem extends Model
     }
 
     /**
-     * Get items total
+     * Get items total.
      *
      * @return int
      */

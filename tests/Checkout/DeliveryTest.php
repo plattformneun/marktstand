@@ -2,14 +2,12 @@
 
 namespace Marktstand\Tests\Checkout;
 
-use Illuminate\Support\Facades\Config;
 use Marktstand\Checkout\Cart;
-use Marktstand\Checkout\CartItem;
-use Marktstand\Checkout\Delivery;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
-use Marktstand\Users\Customer;
 use Marktstand\Users\Supplier;
+use Marktstand\Product\Product;
+use Marktstand\Checkout\CartItem;
+use Illuminate\Support\Facades\Config;
 
 class DeliveryTest extends TestCase
 {
@@ -19,7 +17,7 @@ class DeliveryTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id
+            'cart_id' => $cart->id,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -33,7 +31,7 @@ class DeliveryTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id
+            'cart_id' => $cart->id,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -50,7 +48,7 @@ class DeliveryTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id
+            'cart_id' => $cart->id,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -64,7 +62,7 @@ class DeliveryTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id
+            'cart_id' => $cart->id,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -96,7 +94,7 @@ class DeliveryTest extends TestCase
         $item = factory(CartItem::class)->create([
             'cart_id' => $cart->id,
             'product_id' => $product->id,
-            'quantity' => 1
+            'quantity' => 1,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -128,7 +126,7 @@ class DeliveryTest extends TestCase
         $item = factory(CartItem::class)->create([
             'cart_id' => $cart->id,
             'product_id' => $product->id,
-            'quantity' => 1
+            'quantity' => 1,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -148,7 +146,7 @@ class DeliveryTest extends TestCase
             'volume_unit' => 'kg',
             'price' => 2000,
             'price_unit' => 'kg',
-            'vat' => 10
+            'vat' => 10,
         ]);
 
         $cart = factory(Cart::class)->create();
@@ -168,7 +166,7 @@ class DeliveryTest extends TestCase
     public function it_calculates_the_delivery_days()
     {
         $product = factory(Product::class)->create([
-            'lead_time' => 2
+            'lead_time' => 2,
         ]);
 
         $supplier = factory(Supplier::class)->create([
@@ -180,7 +178,7 @@ class DeliveryTest extends TestCase
         $item = factory(CartItem::class)->create([
             'cart_id' => $cart->id,
             'product_id' => $product->id,
-            'supplier_id' => $supplier->id
+            'supplier_id' => $supplier->id,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -200,7 +198,7 @@ class DeliveryTest extends TestCase
             'volume_unit' => 'kg',
             'price' => 1000,
             'price_unit' => 'kg',
-            'vat' => 10
+            'vat' => 10,
         ]);
 
         $supplier = factory(Supplier::class)->create([
@@ -212,7 +210,7 @@ class DeliveryTest extends TestCase
         $item = factory(CartItem::class)->create([
             'cart_id' => $cart->id,
             'product_id' => $product->id,
-            'supplier_id' => $supplier->id
+            'supplier_id' => $supplier->id,
         ]);
 
         $delivery = $cart->deliveries->first();

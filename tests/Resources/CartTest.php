@@ -2,14 +2,13 @@
 
 namespace Marktstand\Tests\Resources;
 
-use Illuminate\Support\Facades\Config;
 use Marktstand\Checkout\Cart;
-use Marktstand\Checkout\CartItem;
-use Marktstand\Checkout\Delivery;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
+use Marktstand\Product\Product;
+use Marktstand\Checkout\CartItem;
+use Illuminate\Support\Facades\Config;
 use Marktstand\Http\Resources\Cart as CartResource;
 use Marktstand\Http\Resources\Delivery as DeliveryResource;
 
@@ -36,7 +35,7 @@ class CartTest extends TestCase
             'product_id' => $productA->id,
             'producer_id' => $producerA->id,
             'supplier_id' => $supplierA->id,
-            'quantity' => 1
+            'quantity' => 1,
         ]);
 
         factory(CartItem::class)->create([
@@ -44,7 +43,7 @@ class CartTest extends TestCase
             'product_id' => $productB->id,
             'producer_id' => $producerB->id,
             'supplier_id' => $supplierB->id,
-            'quantity' => 1
+            'quantity' => 1,
         ]);
 
         $resource = new CartResource($cart);
@@ -54,9 +53,9 @@ class CartTest extends TestCase
             'subtotal' => 4000,
             'total' => 6400,
             'vat' => [10 => 400],
-            'deliveries' => $cart->deliveries->map(function($delivery) {
+            'deliveries' => $cart->deliveries->map(function ($delivery) {
                 return new DeliveryResource($delivery);
-            })
+            }),
         ]));
     }
 }

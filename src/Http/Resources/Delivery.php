@@ -15,7 +15,7 @@ class Delivery extends JsonResource
     public function toArray($request)
     {
         return [
-           'days' => $this->days(14) // TODO: Add to config
+           'days' => $this->days(14), // TODO: Add to config
         ];
     }
 }
