@@ -2,14 +2,11 @@
 
 namespace Marktstand\Tests\Checkout;
 
-use Marktstand\Checkout\Cart;
-use Marktstand\Checkout\CartItem;
-use Marktstand\Checkout\Delivery;
-use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
-use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
+use Marktstand\Product\Product;
+use Marktstand\Checkout\CartItem;
 
 class CartItemTest extends TestCase
 {
@@ -19,7 +16,7 @@ class CartItemTest extends TestCase
         $supplier = factory(Supplier::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'supplier_id' => $supplier->id
+            'supplier_id' => $supplier->id,
         ]);
 
         $this->assertEquals($supplier->fresh(), $item->supplier);
@@ -31,7 +28,7 @@ class CartItemTest extends TestCase
         $producer = factory(Producer::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'producer_id' => $producer->id
+            'producer_id' => $producer->id,
         ]);
 
         $this->assertEquals($producer->fresh(), $item->producer);
@@ -43,7 +40,7 @@ class CartItemTest extends TestCase
         $product = factory(Product::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'product_id' => $product->id
+            'product_id' => $product->id,
         ]);
 
         $this->assertEquals($product->fresh(), $item->product);

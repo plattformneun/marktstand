@@ -15,8 +15,9 @@ $factory->define(Product::class, function () {
         'vat' => 7,
         'producer_id' => function () {
             $producer = Producer::first();
+
             return $producer ?: factory(Producer::class)->create()->id;
         },
-        'lead_time' => 2
+        'lead_time' => 2,
     ];
 });

@@ -2,10 +2,9 @@
 
 namespace Marktstand\Checkout;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
 use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
+use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
@@ -38,7 +37,7 @@ class Cart extends Model
             $items->pluck('producer_id')->unique()->toArray()
         );
 
-        return $items->groupBy('supplier_id')->map(function($group) use ($producers) {
+        return $items->groupBy('supplier_id')->map(function ($group) use ($producers) {
             return new Delivery($group, $producers);
         })->values();
     }
@@ -106,7 +105,7 @@ class Cart extends Model
      */
     public function vat()
     {
-        return $this->processable()->flatMap(function($delivery) {
+        return $this->processable()->flatMap(function ($delivery) {
             return $this->transformVat($delivery->vat());
         })->groupBy('factor')->map->sum('amount');
     }
@@ -119,10 +118,10 @@ class Cart extends Model
      */
     protected function transformVat($vat)
     {
-        return $vat->map(function($amount, $factor) {
+        return $vat->map(function ($amount, $factor) {
             return [
                 'factor' => $factor,
-                'amount' => $amount
+                'amount' => $amount,
             ];
         });
     }
