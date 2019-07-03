@@ -9,7 +9,7 @@ class Delivery
 {
     /**
      * The items that should delivered.
-     * 
+     *
      * @var Illuminate\Http\Collection
      */
     protected $items;
@@ -44,7 +44,7 @@ class Delivery
             Carbon\Carbon::tomorrow(), $until
         );
 
-        return Collection::make($period->toArray())->filter(function($day) {
+        return Collection::make($period->toArray())->filter(function ($day) {
             return in_array($day->dayOfWeek, $this->supplier()->delivery_times);
         })->values();
     }
@@ -78,10 +78,10 @@ class Delivery
     {
         $ids = $this->items->pluck('producer_id')->unique()->toArray();
 
-        return $this->producers->filter(function($producer) use ($ids) {
+        return $this->producers->filter(function ($producer) use ($ids) {
             return in_array($producer->id, $ids);
-        })->map(function($producer) {
-            $producer->items = $this->items->filter(function($item) use ($producer) {
+        })->map(function ($producer) {
+            $producer->items = $this->items->filter(function ($item) use ($producer) {
                 return $item->producer->id === $producer->id;
             });
 
@@ -92,7 +92,7 @@ class Delivery
     /**
      * Get the subtotal.
      *
-     * @return integer
+     * @return int
      */
     public function subtotal()
     {
@@ -106,10 +106,10 @@ class Delivery
      */
     public function shipping()
     {
-        if($this->isFreeShipping()) {
+        if ($this->isFreeShipping()) {
             return 0;
         }
-        
+
         return $this->supplier()->charge;
     }
 
@@ -130,8 +130,8 @@ class Delivery
      */
     public function vat()
     {
-        return $this->items->groupBy('vat')->map(function($group) {
-            return $group->map(function($item) {
+        return $this->items->groupBy('vat')->map(function ($group) {
+            return $group->map(function ($item) {
                 return $item->total * $item->vat / 100;
             })->sum();
         });

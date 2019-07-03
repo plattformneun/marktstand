@@ -19,9 +19,9 @@ class Cart extends JsonResource
             'subtotal' => $this->subtotal(),
             'total' => $this->total(),
             'vat' => $this->vat(),
-            'deliveries' => $this->deliveries->map(function($delivery) {
+            'deliveries' => $this->deliveries->map(function ($delivery) {
                 return new Delivery($delivery);
-            })
+            }),
         ];
     }
 }

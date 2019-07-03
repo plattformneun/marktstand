@@ -67,7 +67,7 @@ class Marktstand
     public function addAddress($owner, array $data)
     {
         $address = new Support\Address;
-        
+
         $this->makeAddressFillable($address)->fill(array_merge($data, [
             'owner_id' => $owner->id,
             'owner_type' => $owner->type,
@@ -378,7 +378,7 @@ class Marktstand
     public function makeUserFillable($user)
     {
         return $this->setFillable($user, [
-            'email', 'firstname', 'lastname', 'password', 'username', 'options'
+            'email', 'firstname', 'lastname', 'password', 'username', 'options',
         ]);
     }
 
@@ -417,7 +417,7 @@ class Marktstand
     public function makeCartItemFillable(Checkout\CartItem $item)
     {
         return $this->setFillable($item, [
-            'cart_id', 'product_id', 'producer_id', 'supplier_id', 'quantity'
+            'cart_id', 'product_id', 'producer_id', 'supplier_id', 'quantity',
         ]);
     }
 
@@ -525,7 +525,7 @@ class Marktstand
     public function makeSupplierFillable(Users\Supplier $supplier)
     {
         return $this->setFillable($supplier, [
-            'charge', 'free_shipping_at', 'delivery_times', 'min_order_value', 'user_id', 'user_type'
+            'charge', 'free_shipping_at', 'delivery_times', 'min_order_value', 'user_id', 'user_type',
         ]);
     }
 

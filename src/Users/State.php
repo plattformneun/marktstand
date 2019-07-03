@@ -57,11 +57,11 @@ class State
      */
     public function hasDeliveryOptions()
     {
-        if($this->user->type === 'customer') {
+        if ($this->user->type === 'customer') {
             return true;
         }
 
-        return !! $this->user->options['supply'];
+        return (bool) $this->user->options['supply'];
     }
 
     /**
@@ -80,11 +80,11 @@ class State
     /**
      * Check if the users state is pending.
      *
-     * @return boolean
+     * @return bool
      */
     public function isPending()
     {
-        if(isset($this->user->options['status'])) {
+        if (isset($this->user->options['status'])) {
             return $this->user->options['status'] === 'pending';
         }
 

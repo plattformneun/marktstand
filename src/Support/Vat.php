@@ -36,7 +36,7 @@ class Vat implements \JsonSerializable
     public function toArray()
     {
         return [
-            $this->factor() => $this->value()
+            $this->factor() => $this->value(),
         ];
     }
 
