@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 trait UsersManager
 {
     /**
-     * Get a user from credentials
+     * Get a user from credentials.
      *
      * @param  array  $credentials
      * @return Illuminate\Foundation\Auth\User
@@ -22,7 +22,7 @@ trait UsersManager
     {
         $user = $this->fromUsername($credentials['email']);
 
-        if(Hash::check($credentials['password'], $user->password)) {
+        if (Hash::check($credentials['password'], $user->password)) {
             return $user;
         }
 
@@ -39,12 +39,12 @@ trait UsersManager
      */
     public function fromUsername(string $username)
     {
-        if($producer = Producer::where('email', $username)->first()) {
-             return $producer;
+        if ($producer = Producer::where('email', $username)->first()) {
+            return $producer;
         }
 
-        if($customer = Customer::where('email', $username)->first()) {
-             return $customer;
+        if ($customer = Customer::where('email', $username)->first()) {
+            return $customer;
         }
 
         throw new ModelNotFoundException;
