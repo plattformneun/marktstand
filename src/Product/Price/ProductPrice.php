@@ -13,11 +13,11 @@ class ProductPrice extends Price
      */
     public function amount()
     {
-        if($this->unit === $this->priceUnit) {
+        if ($this->unit === $this->priceUnit) {
             return $this->price;
         }
 
-        if(! $this->isValid()) {
+        if (! $this->isValid()) {
             throw new InvalidArgumentException;
         }
 

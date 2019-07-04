@@ -10,7 +10,6 @@ use Marktstand\Product\Quality;
 use Marktstand\Product\Category;
 use Marktstand\Events\ProductSaved;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Config;
 
 class ProductTest extends TestCase
 {

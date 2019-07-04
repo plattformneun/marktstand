@@ -87,13 +87,14 @@ abstract class Price
     abstract public function unit();
 
     /**
-     * Add commission to the amount
+     * Add commission to the amount.
      *
      * @return int
      */
     public function total()
     {
         $commission = new Commission($this->amount());
+
         return $commission->total();
     }
 

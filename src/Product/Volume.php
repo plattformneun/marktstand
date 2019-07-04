@@ -20,7 +20,7 @@ class Volume
 
     /**
      * Create a new volume instance.
-     * 
+     *
      * @param Marktstand\Product\Product $product
      */
     public function __construct(Product $product)

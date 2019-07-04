@@ -15,7 +15,7 @@ class PriceTest extends TestCase
             'price' => 1000,
             'price_unit' => 'pc',
             'volume' => 500,
-            'volume_unit' => 'ml'
+            'volume_unit' => 'ml',
         ]);
 
         $this->assertEquals(1000, $product->price()->amount());
@@ -33,7 +33,7 @@ class PriceTest extends TestCase
             'price' => 2000,
             'price_unit' => 'kg',
             'volume' => 500,
-            'volume_unit' => 'g'
+            'volume_unit' => 'g',
         ]);
 
         $this->assertEquals(1000, $product->price()->amount());
@@ -51,7 +51,7 @@ class PriceTest extends TestCase
             'price' => 1000,
             'price_unit' => 'kg',
             'volume' => 1,
-            'volume_unit' => 'kg'
+            'volume_unit' => 'kg',
         ]);
 
         $this->assertEquals(1000, $product->price()->amount());

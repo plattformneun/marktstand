@@ -11,7 +11,7 @@ class BasePrice extends Price
      */
     public function amount()
     {
-        if($this->isPiece()) {
+        if ($this->isPiece()) {
             return $this->price / $this->canonicalizedVolume();
         }
 
@@ -25,7 +25,7 @@ class BasePrice extends Price
      */
     public function unit()
     {
-        if($this->isPiece()) {
+        if ($this->isPiece()) {
             return $this->baseUnit($this->volumeUnit);
         }
 
