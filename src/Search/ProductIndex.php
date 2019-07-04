@@ -22,9 +22,9 @@ class ProductIndex extends Index
     public function toArray()
     {
         return [
-            'title' => $this->title,
+            'title'    => $this->title,
             'producer' => $this->producer_name,
-            'price' => $this->total_price,
+            'price'    => $this->total_price,
         ];
     }
 }

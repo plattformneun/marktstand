@@ -2,14 +2,14 @@
 
 namespace Marktstand\Tests\Product;
 
+use Illuminate\Support\Facades\Event;
+use Marktstand\Events\ProductSaved;
+use Marktstand\Product\Category;
 use Marktstand\Product\Filter;
-use Marktstand\Tests\TestCase;
-use Marktstand\Users\Producer;
 use Marktstand\Product\Product;
 use Marktstand\Product\Quality;
-use Marktstand\Product\Category;
-use Marktstand\Events\ProductSaved;
-use Illuminate\Support\Facades\Event;
+use Marktstand\Tests\TestCase;
+use Marktstand\Users\Producer;
 
 class ProductTest extends TestCase
 {
@@ -42,7 +42,7 @@ class ProductTest extends TestCase
 
         $this->assertDatabaseHas('category_product', [
             'category_id' => $category->id,
-            'product_id' => $product->id,
+            'product_id'  => $product->id,
         ]);
 
         $this->assertCount(1, $product->categories);
@@ -57,7 +57,7 @@ class ProductTest extends TestCase
         $product->filters()->attach([$filter->id]);
 
         $this->assertDatabaseHas('filter_product', [
-            'filter_id' => $filter->id,
+            'filter_id'  => $filter->id,
             'product_id' => $product->id,
         ]);
 
@@ -73,8 +73,8 @@ class ProductTest extends TestCase
         $product->qualities()->attach([$quality->id]);
 
         $this->assertDatabaseHas('qualifyables', [
-            'quality_id' => $quality->id,
-            'qualifyable_id' => $product->id,
+            'quality_id'       => $quality->id,
+            'qualifyable_id'   => $product->id,
             'qualifyable_type' => 'product',
         ]);
 

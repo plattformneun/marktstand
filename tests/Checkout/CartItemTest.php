@@ -2,11 +2,11 @@
 
 namespace Marktstand\Tests\Checkout;
 
+use Marktstand\Checkout\CartItem;
+use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
-use Marktstand\Product\Product;
-use Marktstand\Checkout\CartItem;
 
 class CartItemTest extends TestCase
 {

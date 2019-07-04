@@ -3,22 +3,22 @@
 namespace Marktstand\Managers;
 
 use Marktstand\Checkout\Cart;
-use Marktstand\Users\Customer;
-use Marktstand\Product\Product;
 use Marktstand\Checkout\CartItem;
+use Marktstand\Product\Product;
+use Marktstand\Users\Customer;
 
 trait CheckoutManager
 {
-
     /**
      * Create a new cart.
      *
      * @param Marktstand\Users\Customer $customer
+     *
      * @return Marktstand\Checkout\Cart
      */
     public function createCart(Customer $customer)
     {
-        $cart = new Cart;
+        $cart = new Cart();
         $cart->customer_id = $customer->id;
         $cart->save();
 
@@ -28,26 +28,27 @@ trait CheckoutManager
     /**
      * Add a new cart item.
      *
-     * @param Marktstand\Checkout\Cart $cart
-     * @param  Marktstand\Product\Product $product
-     * @param  int $quantity
+     * @param Marktstand\Checkout\Cart   $cart
+     * @param Marktstand\Product\Product $product
+     * @param int                        $quantity
+     *
      * @return Marktstand\Checkout\Cart
      */
     public function addToCart(Cart $cart, Product $product, int $quantity)
     {
         $item = CartItem::where([
-            'cart_id' => $cart->id,
+            'cart_id'    => $cart->id,
             'product_id' => $product->id,
-        ])->first() ?: new CartItem;
+        ])->first() ?: new CartItem();
 
         $producer = $product->producer;
 
         $this->makeCartItemFillable($item)->fill([
-            'cart_id' => $cart->id,
-            'product_id' => $product->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $product->id,
             'producer_id' => $producer->id,
             'supplier_id' => $producer->supplier->id,
-            'quantity' => $quantity,
+            'quantity'    => $quantity,
         ])->save();
 
         return $cart;
@@ -56,7 +57,8 @@ trait CheckoutManager
     /**
      * Remove a cart item.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return void
      */
     public function removeFromCart($id)
@@ -67,7 +69,8 @@ trait CheckoutManager
     /**
      * Set fillable fields for the given checkout item.
      *
-     * @param  Marktstand\Checkout\CartItem $item
+     * @param Marktstand\Checkout\CartItem $item
+     *
      * @return Marktstand\Checkout\CartItem
      */
     public function makeCartItemFillable(CartItem $item)

@@ -9,7 +9,8 @@ class BankAccount extends Model
     /**
      * Get the bank account number.
      *
-     * @param  string $value
+     * @param string $value
+     *
      * @return Marktstand\Payment\BankAccountNumber
      */
     public function getNumberAttribute($value)
@@ -21,7 +22,8 @@ class BankAccount extends Model
      * Set the bank account number.
      *
      * @param string $value
-     * @return  void
+     *
+     * @return void
      */
     public function setNumberAttribute($value)
     {
@@ -31,7 +33,8 @@ class BankAccount extends Model
     /**
      * Get the bank account code.
      *
-     * @param  string $value
+     * @param string $value
+     *
      * @return Marktstand\Payment\BankAccountCode
      */
     public function getCodeAttribute($value)

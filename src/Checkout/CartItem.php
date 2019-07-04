@@ -2,10 +2,10 @@
 
 namespace Marktstand\Checkout;
 
+use Illuminate\Database\Eloquent\Model;
+use Marktstand\Product\Product;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
-use Marktstand\Product\Product;
-use Illuminate\Database\Eloquent\Model;
 
 class CartItem extends Model
 {

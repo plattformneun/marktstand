@@ -9,7 +9,8 @@ trait Slugable
     /**
      * Generate the slug.
      *
-     * @param  string $value
+     * @param string $value
+     *
      * @return void
      */
     public function generateSlug($value)
@@ -26,7 +27,8 @@ trait Slugable
     /**
      * Get the models from an array of slugs.
      *
-     * @param  array  $slugs
+     * @param array $slugs
+     *
      * @return Illuminate\Support\Collection
      */
     public static function allFromSlugs(array $slugs)
@@ -37,7 +39,8 @@ trait Slugable
     /**
      * Get all models except the given array of slugs.
      *
-     * @param  array  $slugs
+     * @param array $slugs
+     *
      * @return Illuminate\Support\Collection
      */
     public static function exceptFromSlugs(array $slugs)
@@ -48,7 +51,8 @@ trait Slugable
     /**
      * Check if the slug already exists.
      *
-     * @param  string $slug
+     * @param string $slug
+     *
      * @return bool
      */
     public static function slugExists(string $slug)

@@ -2,8 +2,8 @@
 
 namespace Marktstand\Company;
 
-use Marktstand\Support\Image;
 use Illuminate\Database\Eloquent\Model;
+use Marktstand\Support\Image;
 
 class Company extends Model
 {

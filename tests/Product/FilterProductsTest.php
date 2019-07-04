@@ -2,11 +2,11 @@
 
 namespace Marktstand\Tests\Product;
 
+use Marktstand\Product\Category;
 use Marktstand\Product\Filter;
-use Marktstand\Tests\TestCase;
 use Marktstand\Product\Product;
 use Marktstand\Product\Quality;
-use Marktstand\Product\Category;
+use Marktstand\Tests\TestCase;
 
 class FilterProductsTest extends TestCase
 {
@@ -92,7 +92,7 @@ class FilterProductsTest extends TestCase
 
     protected function filterProducts(array $categories, array $qualities = [], array $filters = [])
     {
-        return (new Product)
+        return (new Product())
 
             // from all products that belongs to any category
             ->whereHas('categories', function ($query) use ($categories) {

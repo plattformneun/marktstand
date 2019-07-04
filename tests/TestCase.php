@@ -18,7 +18,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Load package service provider.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Foundation\Application $app
+     *
      * @return lasselehtinen\MyPackage\MyPackageServiceProvider
      */
     protected function getPackageProviders($app)

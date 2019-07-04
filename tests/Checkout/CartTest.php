@@ -2,15 +2,15 @@
 
 namespace Marktstand\Tests\Checkout;
 
+use Illuminate\Support\Facades\Config;
 use Marktstand\Checkout\Cart;
+use Marktstand\Checkout\CartItem;
+use Marktstand\Checkout\Delivery;
+use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
-use Marktstand\Product\Product;
-use Marktstand\Checkout\CartItem;
-use Marktstand\Checkout\Delivery;
-use Illuminate\Support\Facades\Config;
 
 class CartTest extends TestCase
 {
@@ -54,12 +54,12 @@ class CartTest extends TestCase
         // Remove commission.
         Config::set('marktstand.commission', 0);
         $product = factory(Product::class)->create([
-            'unit' => 'kg',
-            'volume' => 1,
+            'unit'        => 'kg',
+            'volume'      => 1,
             'volume_unit' => 'kg',
-            'price' => 1000,
-            'price_unit' => 'kg',
-            'vat' => 10,
+            'price'       => 1000,
+            'price_unit'  => 'kg',
+            'vat'         => 10,
         ]);
 
         $supplier = factory(Supplier::class)->create([
@@ -69,8 +69,8 @@ class CartTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $product->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $product->id,
             'supplier_id' => $supplier->id,
         ]);
 
@@ -88,12 +88,12 @@ class CartTest extends TestCase
         // Remove commission.
         Config::set('marktstand.commission', 0);
         $product = factory(Product::class)->create([
-            'unit' => 'kg',
-            'volume' => 1,
+            'unit'        => 'kg',
+            'volume'      => 1,
             'volume_unit' => 'kg',
-            'price' => 2000,
-            'price_unit' => 'kg',
-            'vat' => 10,
+            'price'       => 2000,
+            'price_unit'  => 'kg',
+            'vat'         => 10,
         ]);
 
         $supplier = factory(Supplier::class)->create([
@@ -103,8 +103,8 @@ class CartTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $product->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $product->id,
             'supplier_id' => $supplier->id,
         ]);
 
@@ -126,19 +126,19 @@ class CartTest extends TestCase
         $productB = factory(Product::class)->create(['producer_id' => $producerB->id]);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productA->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productA->id,
             'producer_id' => $producerA->id,
             'supplier_id' => $supplierA->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productB->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productB->id,
             'producer_id' => $producerB->id,
             'supplier_id' => $supplierB->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         $this->assertCount(1, $cart->vat());
@@ -159,19 +159,19 @@ class CartTest extends TestCase
         $productB = factory(Product::class)->create(['producer_id' => $producerB->id]);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productA->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productA->id,
             'producer_id' => $producerA->id,
             'supplier_id' => $supplierA->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productB->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productB->id,
             'producer_id' => $producerB->id,
             'supplier_id' => $supplierB->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         $this->assertEquals(2000, $cart->shipping());
@@ -194,19 +194,19 @@ class CartTest extends TestCase
         $productB = factory(Product::class)->create(['producer_id' => $producerB->id, 'price' => 2000, 'vat' => '10']);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productA->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productA->id,
             'producer_id' => $producerA->id,
             'supplier_id' => $supplierA->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productB->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productB->id,
             'producer_id' => $producerB->id,
             'supplier_id' => $supplierB->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         $this->assertEquals(6400, $cart->total());

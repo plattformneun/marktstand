@@ -2,15 +2,15 @@
 
 namespace Marktstand;
 
-use Marktstand\Managers\UsersManager;
-use Marktstand\Managers\ImagesManager;
+use Marktstand\Managers\AddressesManager;
+use Marktstand\Managers\BankAccountsManager;
 use Marktstand\Managers\CheckoutManager;
+use Marktstand\Managers\CompaniesManager;
 use Marktstand\Managers\ContactsManager;
+use Marktstand\Managers\ImagesManager;
 use Marktstand\Managers\ProductsManager;
 use Marktstand\Managers\SettingsManager;
-use Marktstand\Managers\AddressesManager;
-use Marktstand\Managers\CompaniesManager;
-use Marktstand\Managers\BankAccountsManager;
+use Marktstand\Managers\UsersManager;
 
 class Marktstand
 {
@@ -27,8 +27,9 @@ class Marktstand
     /**
      * Set fillable fields for the given model.
      *
-     * @param  Illuminate\Database\Eloquent\Model $model
-     * @param  array  $fillable
+     * @param Illuminate\Database\Eloquent\Model $model
+     * @param array                              $fillable
+     *
      * @return Illuminate\Database\Eloquent\Model
      */
     protected function setFillable($model, array $fillable)

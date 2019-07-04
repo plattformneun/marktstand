@@ -1,18 +1,18 @@
 <?php
 
-use Marktstand\Users\Producer;
 use Marktstand\Product\Product;
+use Marktstand\Users\Producer;
 
 $factory->define(Product::class, function () {
     return [
         'visibillity' => true,
-        'title' => 'Kartoffeln',
-        'unit' => 'kg',
-        'volume' => 1,
+        'title'       => 'Kartoffeln',
+        'unit'        => 'kg',
+        'volume'      => 1,
         'volume_unit' => 'kg',
-        'price' => '1500',
-        'price_unit' => 'kg',
-        'vat' => 7,
+        'price'       => '1500',
+        'price_unit'  => 'kg',
+        'vat'         => 7,
         'producer_id' => function () {
             $producer = Producer::first();
 

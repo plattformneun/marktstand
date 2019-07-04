@@ -2,9 +2,9 @@
 
 namespace Marktstand\Product\Price;
 
-use Marktstand\Product\Product;
-use Marktstand\Payment\Commission;
 use Illuminate\Support\Facades\Config;
+use Marktstand\Payment\Commission;
+use Marktstand\Product\Product;
 
 abstract class Price
 {
@@ -101,7 +101,8 @@ abstract class Price
     /**
      * Fetch the base for the given unit.
      *
-     * @param  string $unit
+     * @param string $unit
+     *
      * @return string
      */
     protected function baseUnit($unit)
@@ -112,7 +113,8 @@ abstract class Price
     /**
      * Fetch the factor for the given unit.
      *
-     * @param  string $unit
+     * @param string $unit
+     *
      * @return int
      */
     protected function factor($unit)
@@ -127,7 +129,7 @@ abstract class Price
      */
     protected function config(string $unit, string $key)
     {
-        if (! $this->config) {
+        if (!$this->config) {
             $this->config = Config::get('marktstand.units');
         }
 

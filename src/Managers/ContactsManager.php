@@ -10,15 +10,16 @@ trait ContactsManager
      * Add a new contact.
      *
      * @param Illuminate\Foundation\Auth\User $user
-     * @param array $data
+     * @param array                           $data
+     *
      * @return Marktstand\Company\Contact
      */
     public function addContact($user, array $data)
     {
-        $contact = new Contact;
+        $contact = new Contact();
 
         $this->makeContactFillable($contact)->fill(array_merge($data, [
-            'user_id' => $user->id,
+            'user_id'   => $user->id,
             'user_type' => $user->type,
         ]))->save();
 
@@ -28,8 +29,9 @@ trait ContactsManager
     /**
      * Update the given contact.
      *
-     * @param  Marktstand\Company\Contact $contact
-     * @param  array $data
+     * @param Marktstand\Company\Contact $contact
+     * @param array                      $data
+     *
      * @return Marktstand\Company\Contact
      */
     public function updateContact(Contact $contact, array $data)
@@ -43,7 +45,8 @@ trait ContactsManager
     /**
      * Set fillable fields for the given contact.
      *
-     * @param  Marktstand\Company\Contact $contact
+     * @param Marktstand\Company\Contact $contact
+     *
      * @return Marktstand\Company\Contact
      */
     public function makeContactFillable(Contact $contact)

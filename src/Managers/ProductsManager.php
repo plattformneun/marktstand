@@ -2,22 +2,22 @@
 
 namespace Marktstand\Managers;
 
-use Marktstand\Users\Producer;
 use Marktstand\Product\Product;
+use Marktstand\Users\Producer;
 
 trait ProductsManager
 {
-
     /**
      * Add a new product.
      *
      * @param Marktstand\Users\Producer $producer
-     * @param array $data
+     * @param array                     $data
+     *
      * @return Marktstand\Product\Product
      */
     public function addProduct(Producer $producer, array $data)
     {
-        $product = new Product;
+        $product = new Product();
 
         $this->makeProductFillable($product)->fill(array_merge($data, [
             'producer_id' => $producer->id,
@@ -29,8 +29,9 @@ trait ProductsManager
     /**
      * Update the given product.
      *
-     * @param  Marktstand\Product\Product $product
-     * @param  array $data
+     * @param Marktstand\Product\Product $product
+     * @param array                      $data
+     *
      * @return Marktstand\Product\Product
      */
     public function updateProduct(Product $product, array $data)
@@ -44,7 +45,8 @@ trait ProductsManager
     /**
      * Set fillable fields for the given product.
      *
-     * @param  Marktstand\Product\Product $product
+     * @param Marktstand\Product\Product $product
+     *
      * @return Marktstand\Product\Product
      */
     public function makeProductFillable(Product $product)

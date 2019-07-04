@@ -2,15 +2,15 @@
 
 namespace Marktstand\Users;
 
-use Marktstand\Checkout\Cart;
-use Marktstand\Product\Product;
-use Marktstand\Support\Address;
-use Marktstand\Access\Verifiable;
-use Marktstand\Company\HasCompany;
-use Marktstand\Company\HasContacts;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Hash;
+use Marktstand\Access\Verifiable;
+use Marktstand\Checkout\Cart;
+use Marktstand\Company\HasCompany;
+use Marktstand\Company\HasContacts;
 use Marktstand\Payment\HasBankAccounts;
+use Marktstand\Product\Product;
+use Marktstand\Support\Address;
 
 class Customer extends User
 {
@@ -56,7 +56,7 @@ class Customer extends User
         parent::boot();
 
         static::created(function ($model) {
-            (new Cart)->fillable(['customer_id'])
+            (new Cart())->fillable(['customer_id'])
                 ->fill(['customer_id' => $model->id])
                 ->save();
         });

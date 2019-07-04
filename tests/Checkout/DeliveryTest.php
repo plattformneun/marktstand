@@ -2,12 +2,12 @@
 
 namespace Marktstand\Tests\Checkout;
 
+use Illuminate\Support\Facades\Config;
 use Marktstand\Checkout\Cart;
+use Marktstand\Checkout\CartItem;
+use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Supplier;
-use Marktstand\Product\Product;
-use Marktstand\Checkout\CartItem;
-use Illuminate\Support\Facades\Config;
 
 class DeliveryTest extends TestCase
 {
@@ -77,24 +77,24 @@ class DeliveryTest extends TestCase
         Config::set('marktstand.commission', 0);
 
         $product = factory(Product::class)->create([
-            'unit' => 'kg',
-            'volume' => 1,
+            'unit'        => 'kg',
+            'volume'      => 1,
             'volume_unit' => 'kg',
-            'price' => 1000,
-            'price_unit' => 'kg',
+            'price'       => 1000,
+            'price_unit'  => 'kg',
         ]);
 
         $supplier = factory(Supplier::class)->create([
-            'charge' => 1000,
+            'charge'           => 1000,
             'free_shipping_at' => 2000,
         ]);
 
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
+            'cart_id'    => $cart->id,
             'product_id' => $product->id,
-            'quantity' => 1,
+            'quantity'   => 1,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -109,24 +109,24 @@ class DeliveryTest extends TestCase
         Config::set('marktstand.commission', 0);
 
         $product = factory(Product::class)->create([
-            'unit' => 'kg',
-            'volume' => 1,
+            'unit'        => 'kg',
+            'volume'      => 1,
             'volume_unit' => 'kg',
-            'price' => 2000,
-            'price_unit' => 'kg',
+            'price'       => 2000,
+            'price_unit'  => 'kg',
         ]);
 
         $supplier = factory(Supplier::class)->create([
-            'charge' => 1000,
+            'charge'           => 1000,
             'free_shipping_at' => 2000,
         ]);
 
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
+            'cart_id'    => $cart->id,
             'product_id' => $product->id,
-            'quantity' => 1,
+            'quantity'   => 1,
         ]);
 
         $delivery = $cart->deliveries->first();
@@ -141,18 +141,18 @@ class DeliveryTest extends TestCase
         Config::set('marktstand.commission', 0);
 
         $product = factory(Product::class)->create([
-            'unit' => 'kg',
-            'volume' => 1,
+            'unit'        => 'kg',
+            'volume'      => 1,
             'volume_unit' => 'kg',
-            'price' => 2000,
-            'price_unit' => 'kg',
-            'vat' => 10,
+            'price'       => 2000,
+            'price_unit'  => 'kg',
+            'vat'         => 10,
         ]);
 
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
+            'cart_id'    => $cart->id,
             'product_id' => $product->id,
         ]);
 
@@ -176,8 +176,8 @@ class DeliveryTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $product->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $product->id,
             'supplier_id' => $supplier->id,
         ]);
 
@@ -193,12 +193,12 @@ class DeliveryTest extends TestCase
         // Remove commission.
         Config::set('marktstand.commission', 0);
         $product = factory(Product::class)->create([
-            'unit' => 'kg',
-            'volume' => 1,
+            'unit'        => 'kg',
+            'volume'      => 1,
             'volume_unit' => 'kg',
-            'price' => 1000,
-            'price_unit' => 'kg',
-            'vat' => 10,
+            'price'       => 1000,
+            'price_unit'  => 'kg',
+            'vat'         => 10,
         ]);
 
         $supplier = factory(Supplier::class)->create([
@@ -208,8 +208,8 @@ class DeliveryTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $item = factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $product->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $product->id,
             'supplier_id' => $supplier->id,
         ]);
 
