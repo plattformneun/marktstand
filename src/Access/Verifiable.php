@@ -3,8 +3,8 @@
 namespace Marktstand\Access;
 
 use Carbon\Carbon;
-use Marktstand\Events\UserVerified;
 use Illuminate\Support\Facades\Event;
+use Marktstand\Events\UserVerified;
 use Marktstand\Events\VerificationRequest;
 
 trait Verifiable
@@ -45,7 +45,8 @@ trait Verifiable
     /**
      * Scope a query to only include verified users.
      *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     *
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeVerified($query)

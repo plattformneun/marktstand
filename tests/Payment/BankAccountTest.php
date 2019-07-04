@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Payment;
 
-use Marktstand\Tests\TestCase;
 use Marktstand\Payment\BankAccount;
 use Marktstand\Payment\BankAccountCode;
 use Marktstand\Payment\BankAccountNumber;
+use Marktstand\Tests\TestCase;
 
 class BankAccountTest extends TestCase
 {

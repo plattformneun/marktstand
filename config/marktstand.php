@@ -5,22 +5,22 @@ return [
 
     'units' => [
         'g' => [
-            'base' => 'kg',
+            'base'   => 'kg',
             'factor' => 1000,
         ],
 
         'kg' => [
-            'base' => 'kg',
+            'base'   => 'kg',
             'factor' => 1,
         ],
 
         'ml' => [
-            'base' => 'l',
+            'base'   => 'l',
             'factor' => 1000,
         ],
 
         'l' => [
-            'base' => 'l',
+            'base'   => 'l',
             'factor' => 1,
         ],
     ],

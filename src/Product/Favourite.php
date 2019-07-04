@@ -2,15 +2,16 @@
 
 namespace Marktstand\Product;
 
-use Marktstand\Users\Customer;
 use Illuminate\Database\Eloquent\Model;
+use Marktstand\Users\Customer;
 
 class Favourite extends Model
 {
     /**
      * Set the customer that favor the product.
      *
-     * @param  Marktstand\Users\Customer  $customer
+     * @param Marktstand\Users\Customer $customer
+     *
      * @return void
      */
     public function setCustomerAttribute(Customer $customer)
@@ -21,7 +22,8 @@ class Favourite extends Model
     /**
      * Set a favourite product.
      *
-     * @param  Marktstand\Users\Product  $product
+     * @param Marktstand\Users\Product $product
+     *
      * @return void
      */
     public function setProductAttribute(Product $product)

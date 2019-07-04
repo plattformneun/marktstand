@@ -17,8 +17,8 @@ class ProductPrice extends Price
             return $this->price;
         }
 
-        if (! $this->isValid()) {
-            throw new InvalidArgumentException;
+        if (!$this->isValid()) {
+            throw new InvalidArgumentException();
         }
 
         return $this->canonicalizedVolume() * $this->product->basePrice()->amount();

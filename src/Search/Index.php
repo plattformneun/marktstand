@@ -40,7 +40,8 @@ abstract class Index implements Indexable
     /**
      * Get the property from the entity.
      *
-     * @param  string $property
+     * @param string $property
+     *
      * @return mixed
      */
     public function __get($property)

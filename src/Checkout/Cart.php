@@ -2,9 +2,9 @@
 
 namespace Marktstand\Checkout;
 
+use Illuminate\Database\Eloquent\Model;
 use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
-use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
@@ -55,7 +55,8 @@ class Cart extends Model
     /**
      * Get the producers of the cart items.
      *
-     * @param  array  $ids
+     * @param array $ids
+     *
      * @return Illuminate\Support\Collection
      */
     public function producers(array $ids)
@@ -113,7 +114,8 @@ class Cart extends Model
     /**
      * Transform the vat.
      *
-     * @param  Illuminate\Support\Collection $vat
+     * @param Illuminate\Support\Collection $vat
+     *
      * @return Illuminate\Support\Collection
      */
     protected function transformVat($vat)

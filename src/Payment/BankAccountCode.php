@@ -75,7 +75,8 @@ class BankAccountCode
     /**
      * Canonicalize the given value.
      *
-     * @param  string $swift
+     * @param string $swift
+     *
      * @return string
      */
     protected function canonicalize($swift)
@@ -100,15 +101,15 @@ class BankAccountCode
      */
     protected function validate()
     {
-        if (! ctype_alnum($this->swift)) {
+        if (!ctype_alnum($this->swift)) {
             throw new InvalidArgumentException('Invalid Characters');
         }
 
-        if (! array_key_exists($this->countryCode(), self::FORMATS)) {
+        if (!array_key_exists($this->countryCode(), self::FORMATS)) {
             throw new InvalidArgumentException('Invalid Country Code');
         }
 
-        if (! preg_match('/^'.$this->format().'$/', $this->swift)) {
+        if (!preg_match('/^'.$this->format().'$/', $this->swift)) {
             throw new InvalidArgumentException('Invalid Format');
         }
     }

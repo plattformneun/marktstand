@@ -2,8 +2,8 @@
 
 namespace Marktstand\Payment;
 
-use Marktstand\Contracts\Price;
 use Illuminate\Support\Facades\Config;
+use Marktstand\Contracts\Price;
 
 class Commission
 {
@@ -59,7 +59,8 @@ class Commission
     /**
      * Subtract the commission from the given price.
      *
-     * @param  int    $price
+     * @param int $price
+     *
      * @return int
      */
     public static function subtract(int $price)

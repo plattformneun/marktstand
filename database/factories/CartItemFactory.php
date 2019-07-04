@@ -1,10 +1,10 @@
 <?php
 
 use Marktstand\Checkout\Cart;
+use Marktstand\Checkout\CartItem;
+use Marktstand\Product\Product;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
-use Marktstand\Product\Product;
-use Marktstand\Checkout\CartItem;
 
 $factory->define(CartItem::class, function () {
     return [

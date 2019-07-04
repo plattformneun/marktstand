@@ -155,7 +155,8 @@ class BankAccountNumber
     /**
      * Canonicalize the given value.
      *
-     * @param  string $iban
+     * @param string $iban
+     *
      * @return string
      */
     protected function canonicalize($iban)
@@ -180,15 +181,15 @@ class BankAccountNumber
      */
     protected function validate()
     {
-        if (! ctype_alnum($this->iban)) {
+        if (!ctype_alnum($this->iban)) {
             throw new InvalidArgumentException('Invalid Characters');
         }
 
-        if (! array_key_exists($this->countryCode(), self::FORMATS)) {
+        if (!array_key_exists($this->countryCode(), self::FORMATS)) {
             throw new InvalidArgumentException('Invalid Country Code');
         }
 
-        if (! preg_match('/^'.$this->format().'$/', $this->iban)) {
+        if (!preg_match('/^'.$this->format().'$/', $this->iban)) {
             throw new InvalidArgumentException('Invalid Format');
         }
     }

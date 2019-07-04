@@ -9,14 +9,15 @@ trait ImagesManager
     /**
      * Add a new image.
      *
-     * @param array $data
-     * @param mixed $owner
+     * @param array                         $data
+     * @param mixed                         $owner
      * @param Marktstand\Support\Image|null $image
-     * @return  Marktstand\Support\Image
+     *
+     * @return Marktstand\Support\Image
      */
     public function addImage($data, $owner = null, $image = null)
     {
-        $image = $image ?: new Image;
+        $image = $image ?: new Image();
 
         $this->makeImageFillable($image)
             ->fill($data);
@@ -34,13 +35,14 @@ trait ImagesManager
      * Attach an image to the given owner.
      *
      * @param Marktstand\Support\Image $image
-     * @param mixed $owner
-     * @return  Marktstand\Support\Image
+     * @param mixed                    $owner
+     *
+     * @return Marktstand\Support\Image
      */
     public function attachImage($image, $owner)
     {
         return $this->makeImageFillable($image)->fill([
-            'imageable_id' => $owner->id,
+            'imageable_id'   => $owner->id,
             'imageable_type' => $owner_type,
         ]);
     }
@@ -49,8 +51,9 @@ trait ImagesManager
      * Attach an image to the given owner and save.
      *
      * @param Marktstand\Support\Image $image
-     * @param mixed $owner
-     * @return  Marktstand\Support\Image
+     * @param mixed                    $owner
+     *
+     * @return Marktstand\Support\Image
      */
     public function attachImageAndSave($image, $owner)
     {
@@ -64,7 +67,8 @@ trait ImagesManager
     /**
      * Set fillable fields for the given image.
      *
-     * @param  Marktstand\Support\Image $image
+     * @param Marktstand\Support\Image $image
+     *
      * @return Marktstand\Support\Image
      */
     public function makeImageFillable(Image $image)

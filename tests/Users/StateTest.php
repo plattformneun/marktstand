@@ -3,12 +3,12 @@
 namespace Marktstand\Tests\Users;
 
 use Carbon\Carbon;
-use Marktstand\Users\State;
-use Marktstand\Tests\TestCase;
-use Marktstand\Users\Producer;
 use Marktstand\Company\Company;
 use Marktstand\Company\Contact;
 use Marktstand\Payment\BankAccount;
+use Marktstand\Tests\TestCase;
+use Marktstand\Users\Producer;
+use Marktstand\Users\State;
 
 class StateTest extends TestCase
 {
@@ -29,7 +29,7 @@ class StateTest extends TestCase
         $producer = factory(Producer::class)->create();
 
         factory(BankAccount::class)->create([
-            'user_id' => $producer->id,
+            'user_id'   => $producer->id,
             'user_type' => 'producer',
         ]);
 
@@ -52,7 +52,7 @@ class StateTest extends TestCase
         $producer = factory(Producer::class)->create();
 
         factory(Company::class)->create([
-            'user_id' => $producer->id,
+            'user_id'   => $producer->id,
             'user_type' => 'producer',
         ]);
 
@@ -75,7 +75,7 @@ class StateTest extends TestCase
         $producer = factory(Producer::class)->create();
 
         factory(Contact::class)->create([
-            'user_id' => $producer->id,
+            'user_id'   => $producer->id,
             'user_type' => 'producer',
         ]);
 

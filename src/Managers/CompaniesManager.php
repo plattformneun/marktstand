@@ -6,20 +6,20 @@ use Marktstand\Company\Company;
 
 trait CompaniesManager
 {
-
     /**
      * Add a new company.
      *
      * @param Illuminate\Foundation\Auth\User $user
-     * @param array $data
+     * @param array                           $data
+     *
      * @return Marktstand\Company\Company
      */
     public function addCompany($user, array $data)
     {
-        $company = new Company;
+        $company = new Company();
 
         $this->makeCompanyFillable($company)->fill(array_merge($data, [
-            'user_id' => $user->id,
+            'user_id'   => $user->id,
             'user_type' => $user->type,
         ]))->save();
 
@@ -29,8 +29,9 @@ trait CompaniesManager
     /**
      * Update the given company.
      *
-     * @param  Marktstand\Company\Company $company
-     * @param  array $data
+     * @param Marktstand\Company\Company $company
+     * @param array                      $data
+     *
      * @return Marktstand\Company\Company
      */
     public function updateCompany(Company $company, array $data)
@@ -44,7 +45,8 @@ trait CompaniesManager
     /**
      * Set fillable fields for the given company.
      *
-     * @param  Marktstand\Company\Company $company
+     * @param Marktstand\Company\Company $company
+     *
      * @return Marktstand\Company\Company
      */
     public function makeCompanyFillable(Company $company)

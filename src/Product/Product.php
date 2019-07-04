@@ -2,11 +2,11 @@
 
 namespace Marktstand\Product;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Marktstand\Events\ProductSaved;
 use Marktstand\Support\Image;
 use Marktstand\Users\Producer;
-use Marktstand\Events\ProductSaved;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {

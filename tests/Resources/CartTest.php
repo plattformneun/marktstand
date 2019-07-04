@@ -2,15 +2,15 @@
 
 namespace Marktstand\Tests\Resources;
 
+use Illuminate\Support\Facades\Config;
 use Marktstand\Checkout\Cart;
+use Marktstand\Checkout\CartItem;
+use Marktstand\Http\Resources\Cart as CartResource;
+use Marktstand\Http\Resources\Delivery as DeliveryResource;
+use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
 use Marktstand\Users\Supplier;
-use Marktstand\Product\Product;
-use Marktstand\Checkout\CartItem;
-use Illuminate\Support\Facades\Config;
-use Marktstand\Http\Resources\Cart as CartResource;
-use Marktstand\Http\Resources\Delivery as DeliveryResource;
 
 class CartTest extends TestCase
 {
@@ -31,28 +31,28 @@ class CartTest extends TestCase
         $productB = factory(Product::class)->create(['producer_id' => $producerB->id, 'price' => 2000, 'vat' => '10']);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productA->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productA->id,
             'producer_id' => $producerA->id,
             'supplier_id' => $supplierA->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         factory(CartItem::class)->create([
-            'cart_id' => $cart->id,
-            'product_id' => $productB->id,
+            'cart_id'     => $cart->id,
+            'product_id'  => $productB->id,
             'producer_id' => $producerB->id,
             'supplier_id' => $supplierB->id,
-            'quantity' => 1,
+            'quantity'    => 1,
         ]);
 
         $resource = new CartResource($cart);
 
         $this->assertEquals(json_encode($resource), json_encode([
-            'shipping' => 2000,
-            'subtotal' => 4000,
-            'total' => 6400,
-            'vat' => [10 => 400],
+            'shipping'   => 2000,
+            'subtotal'   => 4000,
+            'total'      => 6400,
+            'vat'        => [10 => 400],
             'deliveries' => $cart->deliveries->map(function ($delivery) {
                 return new DeliveryResource($delivery);
             }),

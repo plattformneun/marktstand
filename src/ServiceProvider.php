@@ -35,7 +35,7 @@ class ServiceProvider extends BaseServiceProvider
         $this->mergeConfigFrom($this->path('config/marktstand.php'), 'marktstand');
 
         $this->app->bind('marktstand', function () {
-            return new Marktstand;
+            return new Marktstand();
         });
     }
 
@@ -47,18 +47,19 @@ class ServiceProvider extends BaseServiceProvider
     protected function mapRelations()
     {
         Relation::morphMap([
-            'cart' => \Marktstand\Checkout\Cart::class,
-            'order' => \Marktstand\Checkout\Order::class,
+            'cart'     => \Marktstand\Checkout\Cart::class,
+            'order'    => \Marktstand\Checkout\Order::class,
             'customer' => \Marktstand\Users\Customer::class,
             'producer' => \Marktstand\Users\Producer::class,
-            'product' => \Marktstand\Product\Product::class,
+            'product'  => \Marktstand\Product\Product::class,
         ]);
     }
 
     /**
      * Get the full path.
      *
-     * @param  string $path
+     * @param string $path
+     *
      * @return string
      */
     protected function path(string $path)

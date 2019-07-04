@@ -10,11 +10,12 @@ trait SettingsManager
      * Add a new product category.
      *
      * @param array $data
+     *
      * @return Marktstand\Product\Category
      */
     public function addCategory(array $data)
     {
-        $category = new Category;
+        $category = new Category();
 
         $this->makeCategoryFillable($category)
             ->fill($data)
@@ -26,7 +27,8 @@ trait SettingsManager
     /**
      * Set fillable fields for the given category.
      *
-     * @param  Marktstand\Product\Category $category
+     * @param Marktstand\Product\Category $category
+     *
      * @return Marktstand\Product\Category
      */
     public function makeCategoryFillable(Category $category)

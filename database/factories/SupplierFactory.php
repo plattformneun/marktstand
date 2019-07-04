@@ -10,10 +10,10 @@ $factory->define(Supplier::class, function () {
 
             return $producer ?: factory(Producer::class)->create()->id;
         },
-        'user_type' => 'producer',
-        'charge' => 1000,
-        'min_order_value' => 10000,
+        'user_type'        => 'producer',
+        'charge'           => 1000,
+        'min_order_value'  => 10000,
         'free_shipping_at' => 30000,
-        'delivery_times' => [1, 2],
+        'delivery_times'   => [1, 2],
     ];
 });

@@ -2,15 +2,15 @@
 
 namespace Marktstand\Users;
 
-use Marktstand\Support\Slug;
-use Marktstand\Product\Product;
-use Marktstand\Product\Quality;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Hash;
 use Marktstand\Access\Verifiable;
 use Marktstand\Company\HasCompany;
 use Marktstand\Company\HasContacts;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Hash;
 use Marktstand\Payment\HasBankAccounts;
+use Marktstand\Product\Product;
+use Marktstand\Product\Quality;
+use Marktstand\Support\Slug;
 
 class Producer extends User
 {
@@ -71,7 +71,8 @@ class Producer extends User
      * Set the username.
      *
      * @param string $value
-     * @return  void
+     *
+     * @return void
      */
     public function setUsernameAttribute($value)
     {
