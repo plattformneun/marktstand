@@ -9,7 +9,6 @@ use Marktstand\Checkout\CartItem;
 
 trait CheckoutManager
 {
-
     /**
      * Create a new cart.
      *
