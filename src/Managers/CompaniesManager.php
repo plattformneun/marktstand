@@ -6,7 +6,6 @@ use Marktstand\Company\Company;
 
 trait CompaniesManager
 {
-
     /**
      * Add a new company.
      *

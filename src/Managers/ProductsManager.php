@@ -7,7 +7,6 @@ use Marktstand\Product\Product;
 
 trait ProductsManager
 {
-
     /**
      * Add a new product.
      *
