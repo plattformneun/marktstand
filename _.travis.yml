@@ -1,0 +1,12 @@
+# language: php
+# php:
+# - 7.1
+# - 7.2
+# - 7.3
+# before_script:
+# - travis_retry composer update
+# script:
+# - vendor/bin/phpunit
+# notifications:
+#   slack:
+#     secure: KlkEvNDuMEP+2LEEOhELVyOKaLIFK3spjVKfZ0eaMVs/dm5VYKMsQWlNOYs6/0MDTSTWvwrR3lil345/kJa8FJyoaOpNUSfz/kyEciOIiZwkos0M0zaL9n7vdkTvKDqq2hNE+GBRAFQxCdGyTmqZnBOrWdfPWRUngYD1mLaolNLaEsbDI82EoFRj97PKBwEksuE/b6/Sxc8u2uIFWOLF774yqP3sLOxtNuDOboRejhUJwfx1G8fIqKfWBlAm1VT77FBPi50mzgcPykT9nRVcmmxP8/ckvpO9YCHfdbAz1oeBObZ5N2TBGlFBGaQmLacY6kvypB1GY+4BRdcu2QqhKzoC/nUti/kUnxRo6WNxaXmNLkuF49rgiyZ1q2/KGrjrw8f4ypQsBZHWPNZCKHhElTt+oGH0KbO3ydGeH19+90mDYifYY8bgVHMG0G1QKsbfN1iMauMctTfG78trB3BESsgjZ//LqPbLMbOA6/j7N7crWCjBwB7sd57Gm6RFPkzAUH7E039nm16FFqI12zcsTuXMFdHFxxeRuRzumQggMHnbStJO0EW9CaxUJsbfKDv/DBppaouCDPIEw+oqFzHHmN36cgGCwp4KLgd/vYKSxPM/E1a/m/nl9qKdZ2JURtSJoxaVpyNHHAKlZCHV53BYhfaPVk6iGv+8Kei7HOHmkvo=
