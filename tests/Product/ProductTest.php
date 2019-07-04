@@ -2,7 +2,6 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Product\Price;
 use Marktstand\Product\Filter;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Producer;
@@ -23,14 +22,6 @@ class ProductTest extends TestCase
         factory(Product::class)->create();
 
         Event::assertDispatched(ProductSaved::class);
-    }
-
-    /** @test */
-    public function it_gets_the_price()
-    {
-        $product = factory(Product::class)->make();
-
-        $this->assertTrue($product->price() instanceof Price);
     }
 
     /** @test */
@@ -56,38 +47,6 @@ class ProductTest extends TestCase
         ]);
 
         $this->assertCount(1, $product->categories);
-    }
-
-    /** @test */
-    public function it_calculates_the_shop_price()
-    {
-        Config::set('marktstand.commission', 25);
-
-        $product = factory(Product::class)->create([
-            'unit' => 'portion',
-            'volume' => 500,
-            'volume_unit' => 'ml',
-            'price' => 100,
-            'price_unit' => 'portion',
-        ]);
-
-        $this->assertEquals(125, $product->getTotalPrice());
-    }
-
-    /** @test */
-    public function it_calculates_the_shop_base_price()
-    {
-        Config::set('marktstand.commission', 25);
-
-        $product = factory(Product::class)->create([
-            'unit' => 'portion',
-            'volume' => 500,
-            'volume_unit' => 'ml',
-            'price' => 100,
-            'price_unit' => 'portion',
-        ]);
-
-        $this->assertEquals(250, $product->getTotalBasePrice());
     }
 
     /** @test */

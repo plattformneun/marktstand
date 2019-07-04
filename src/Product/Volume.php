@@ -5,45 +5,47 @@ namespace Marktstand\Product;
 class Volume
 {
     /**
-     * @var Marktstand\Product\Product
+     * The products volume.
+     *
+     * @var int
      */
-    protected $product;
+    protected $volume;
 
     /**
-     * Create a new price instance.
+     * The volume unit.
+     *
+     * @var string
+     */
+    protected $volumeUnit;
+
+    /**
+     * Create a new volume instance.
+     * 
+     * @param Marktstand\Product\Product $product
      */
     public function __construct(Product $product)
     {
-        $this->product = $product;
+        $this->volume = $product->volume;
+        $this->volumeUnit = $product->volume_unit;
     }
 
     /**
-     * Get the volume from base.
-     *
-     * @return Number
-     */
-    public function base()
-    {
-        return $this->value() / $this->unit()->factor();
-    }
-
-    /**
-     * Get the volume unit.
-     *
-     * @return Marktstand\Support\Unit
-     */
-    public function unit()
-    {
-        return $this->product->volume_unit;
-    }
-
-    /**
-     * Get the value.
+     * Get the volume qunatity.
      *
      * @return int
      */
-    public function value()
+    public function quantity()
     {
-        return $this->product->volume;
+        return $this->volume;
+    }
+
+    /**
+     * Get the volumes unit.
+     *
+     * @return string
+     */
+    public function unit()
+    {
+        return $this->volumeUnit;
     }
 }

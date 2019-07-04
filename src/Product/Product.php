@@ -2,19 +2,14 @@
 
 namespace Marktstand\Product;
 
-use Marktstand\Support\Unit;
 use Marktstand\Support\Image;
 use Marktstand\Users\Producer;
-use Marktstand\Support\Imageable;
-use Marktstand\Payment\Commission;
 use Marktstand\Events\ProductSaved;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
-    use Imageable;
-
     /**
      * The registered model events.
      *
@@ -41,11 +36,21 @@ class Product extends Model
     /**
      * Get the products price.
      *
-     * @return Marktstand\Product\Price
+     * @return Marktstand\Product\Price\ProductPrice
      */
     public function price()
     {
-        return new Price($this);
+        return new Price\ProductPrice($this);
+    }
+
+    /**
+     * Get the products base price.
+     *
+     * @return Marktstand\Product\Price\BasePrice
+     */
+    public function basePrice()
+    {
+        return new Price\BasePrice($this);
     }
 
     /**
@@ -96,83 +101,6 @@ class Product extends Model
     public function qualities()
     {
         return $this->morphToMany(Quality::class, 'qualifyable');
-    }
-
-    /**
-     * Get the products producer name.
-     *
-     * @return string
-     */
-    public function getProducerNameAttribute()
-    {
-        return $this->producer->company_name;
-    }
-
-    /**
-     * Get the products total price.
-     *
-     * @return int
-     */
-    public function getTotalPriceAttribute()
-    {
-        return $this->getTotalPrice();
-    }
-
-    /**
-     * Get the products selling unit.
-     *
-     * @param  string $value
-     * @return Marktstand\Support\Unit
-     */
-    public function getUnitAttribute($value)
-    {
-        return new Unit($value);
-    }
-
-    /**
-     * Get the products price unit.
-     *
-     * @param  string $value
-     * @return Marktstand\Support\Unit
-     */
-    public function getPriceUnitAttribute($value)
-    {
-        return new Unit($value);
-    }
-
-    /**
-     * Get the products volume unit.
-     *
-     * @param  string $value
-     * @return Marktstand\Support\Unit
-     */
-    public function getVolumeUnitAttribute($value)
-    {
-        return new Unit($value);
-    }
-
-    /**
-     * Get the shop price.
-     *
-     * @return int
-     */
-    public function getTotalPrice()
-    {
-        $commission = new Commission($this->price()->value());
-
-        return $commission->total();
-    }
-
-    /**
-     * Get the shop base price.
-     *
-     * @return int
-     */
-    public function getTotalBasePrice()
-    {
-        $commission = new Commission($this->price()->base());
-
-        return $commission->total();
     }
 
     /**

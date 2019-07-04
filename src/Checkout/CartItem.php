@@ -49,7 +49,7 @@ class CartItem extends Model
      */
     public function getTotalAttribute()
     {
-        return $this->quantity * $this->product->total_price;
+        return $this->quantity * $this->product->price()->total();
     }
 
     /**
