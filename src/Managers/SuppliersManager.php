@@ -31,7 +31,7 @@ class SuppliersManager extends Manager
      * @param Marktstand\Users\Supplier
      * @param array $data
      * @return Marktstand\Users\Supplier
-     */    
+     */
     public function update(Supplier $supplier, array $data)
     {
         $this->makeFillable($supplier)->update($data);
