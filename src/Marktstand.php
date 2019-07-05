@@ -2,16 +2,16 @@
 
 namespace Marktstand;
 
-use Marktstand\Managers\AddressesManager;
-use Marktstand\Managers\BankAccountsManager;
-use Marktstand\Managers\CheckoutManager;
-use Marktstand\Managers\CompaniesManager;
-use Marktstand\Managers\ContactsManager;
-use Marktstand\Managers\ImagesManager;
-use Marktstand\Managers\ProducersManager;
-use Marktstand\Managers\ProductsManager;
-use Marktstand\Managers\SuppliersManager;
 use Marktstand\Managers\UsersManager;
+use Marktstand\Managers\ImagesManager;
+use Marktstand\Managers\CheckoutManager;
+use Marktstand\Managers\ContactsManager;
+use Marktstand\Managers\ProductsManager;
+use Marktstand\Managers\AddressesManager;
+use Marktstand\Managers\CompaniesManager;
+use Marktstand\Managers\ProducersManager;
+use Marktstand\Managers\SuppliersManager;
+use Marktstand\Managers\BankAccountsManager;
 
 class Marktstand
 {
