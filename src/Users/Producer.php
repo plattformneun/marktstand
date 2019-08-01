@@ -69,7 +69,7 @@ class Producer extends User
         parent::boot();
 
         static::created(function ($model) {
-            Event::dispatch(new UserCreated($this));
+            Event::dispatch(new UserCreated($model));
         });
     }
 

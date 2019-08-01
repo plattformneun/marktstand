@@ -58,7 +58,7 @@ class Customer extends User
         parent::boot();
 
         static::created(function ($model) {
-            Event::dispatch(new UserCreated($this));
+            Event::dispatch(new UserCreated($model));
 
             (new Cart)->fillable(['customer_id'])
                 ->fill(['customer_id' => $model->id])
