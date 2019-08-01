@@ -11,6 +11,15 @@ use Illuminate\Database\Eloquent\Builder;
 class Product extends Model
 {
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'prices'
+    ];
+
+    /**
      * The registered model events.
      *
      * @var array
@@ -31,6 +40,25 @@ class Product extends Model
         static::addGlobalScope('visible', function (Builder $builder) {
             $builder->where('visibillity', true);
         });
+    }
+
+    /**
+     * Get the calculated prices.
+     *
+     * @return array
+     */
+    public function getPricesAttribute()
+    {
+        return [
+            'item' => [
+                'amount' => $this->price()->total(),
+                'unit' => $this->price()->unit(),
+            ],
+            'item' => [
+                'amount' => $this->basePrice()->total(),
+                'unit' => $this->basePrice()->unit(),
+            ],
+        ];
     }
 
     /**
