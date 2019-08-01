@@ -15,7 +15,7 @@ class CartItem extends Model
      * @var array
      */
     protected $with = [
-        'product.thumbnail', 'supplier.user.company.logo', 'supplier.user', 'producer.company'
+        'product.thumbnail', 'supplier.user.company.logo', 'supplier.user', 'producer.company',
     ];
 
     /**
@@ -24,7 +24,7 @@ class CartItem extends Model
      * @var array
      */
     protected $appends = [
-        'total'
+        'total',
     ];
 
     /**
