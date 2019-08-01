@@ -2,17 +2,17 @@
 
 namespace Marktstand\Users;
 
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Hash;
-use Marktstand\Access\Verifiable;
 use Marktstand\Checkout\Cart;
-use Marktstand\Company\HasCompany;
-use Marktstand\Company\HasContacts;
-use Marktstand\Events\UserCreated;
-use Marktstand\Payment\HasBankAccounts;
 use Marktstand\Product\Product;
 use Marktstand\Support\Address;
+use Marktstand\Access\Verifiable;
+use Marktstand\Company\HasCompany;
+use Marktstand\Events\UserCreated;
+use Marktstand\Company\HasContacts;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Event;
+use Marktstand\Payment\HasBankAccounts;
 
 class Customer extends User
 {
