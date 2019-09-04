@@ -1,6 +1,6 @@
 # Marktstand [WIP]
 
-[![Build Status](https://travis-ci.org/plattform-neun/marktstand.svg?branch=master)](https://travis-ci.org/plattform-neun/marktstand)
+[![Build Status](https://travis-ci.org/plattformneun/marktstand.svg?branch=master)](https://travis-ci.org/plattformneun/marktstand)
 
 ## Introduction
 Marktstand `[ˈmaʁktˌʃtant]` is an open source library to create a farmers market with Laravel. Markstand provides solutions for common e-commerce tasks, such as:
