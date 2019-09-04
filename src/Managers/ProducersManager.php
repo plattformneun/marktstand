@@ -36,7 +36,7 @@ class ProducersManager extends Manager
         if ($this->paginate) {
             return Producer::with($with)->paginate($this->paginate);
         }
-        
+
         return Producer::with($with)->get();
     }
 
