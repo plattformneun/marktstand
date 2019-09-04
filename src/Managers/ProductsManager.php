@@ -15,6 +15,13 @@ class ProductsManager extends Manager
     protected $with = [];
 
     /**
+     * Pagination count.
+     *
+     * @var int
+     */
+    protected $paginate;
+
+    /**
      * Create a new manager instance.
      */
     public function __construct()
@@ -42,6 +49,18 @@ class ProductsManager extends Manager
     public function with($relations)
     {
         $this->with = $relations;
+
+        return $this;
+    }
+
+    /**
+     * The related models that should be eager loaded.
+     *
+     * @return self
+     */
+    public function paginate($count)
+    {
+        $this->paginate = $count;
 
         return $this;
     }
@@ -89,7 +108,13 @@ class ProductsManager extends Manager
     {
         $with = $with ?: $this->with;
 
-        return $this->queryFromProducer($producer, $with)->get();
+        $query = $this->queryFromProducer($producer, $with);
+
+        if ($this->paginate) {
+            return $query->paginate($this->paginate);
+        }
+
+        return $query->get();
     }
 
     /**
