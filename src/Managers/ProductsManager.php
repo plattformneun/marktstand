@@ -8,6 +8,13 @@ use Marktstand\Product\Product;
 class ProductsManager extends Manager
 {
     /**
+     * Eager loaded relations.
+     *
+     * @var array
+     */
+    protected $with = [];
+
+    /**
      * Create a new manager instance.
      */
     public function __construct()
@@ -23,6 +30,18 @@ class ProductsManager extends Manager
     public function withoutGlobalScopes()
     {
         $this->scope = Product::withoutGlobalScopes();
+
+        return $this;
+    }
+
+    /**
+     * The related models that should be eager loaded.
+     *
+     * @return self
+     */
+    public function with($relations)
+    {
+        $this->with = $relations;
 
         return $this;
     }
@@ -52,8 +71,10 @@ class ProductsManager extends Manager
      * @param  array  $with
      * @return Marktstand\Product\Product
      */
-    public function fromId($id, array $with = [])
+    public function fromId($id, array $with = null)
     {
+        $with = $with ?: $this->with;
+
         return $this->scope->with($with)->findOrFail($id);
     }
 
@@ -64,9 +85,11 @@ class ProductsManager extends Manager
      * @param  array $with
      * @return Illuminate\Support\Collection
      */
-    public function fromProducer(Producer $producer, array $with = [])
+    public function fromProducer(Producer $producer, array $with = null)
     {
-        return $this->scope->with($with)->where('producer_id', $producer->id)->get();
+        $with = $with ?: $this->with;
+
+        return $this->queryFromProducer($producer, $with)->get();
     }
 
     /**
@@ -82,6 +105,14 @@ class ProductsManager extends Manager
             ->update($data);
 
         return $product;
+    }
+
+
+    protected function queryFromProducer(Producer $producer, array $with = null)
+    {
+        $with = $with ?: $this->with;
+
+        return $this->scope->with($with)->where('producer_id', $producer->id);
     }
 
     /**
