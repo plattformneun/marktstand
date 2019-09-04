@@ -132,7 +132,6 @@ class ProductsManager extends Manager
         return $product;
     }
 
-
     protected function queryFromProducer(Producer $producer, array $with = null)
     {
         $with = $with ?: $this->with;
