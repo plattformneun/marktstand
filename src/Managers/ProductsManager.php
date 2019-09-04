@@ -132,6 +132,11 @@ class ProductsManager extends Manager
         return $product;
     }
 
+    /**
+     * Query products from the given producer.
+     *
+     * @return Illuminate/Database/Query/Builder
+     */
     protected function queryFromProducer(Producer $producer, array $with = null)
     {
         $with = $with ?: $this->with;
