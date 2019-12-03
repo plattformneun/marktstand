@@ -2,10 +2,10 @@
 
 namespace Marktstand\Managers;
 
-use Marktstand\Users\Customer;
-use Marktstand\Product\Product;
 use Marktstand\Checkout\Cart\Cart;
 use Marktstand\Checkout\Cart\Item;
+use Marktstand\Product\Product;
+use Marktstand\Users\Customer;
 
 class CheckoutManager extends Manager
 {

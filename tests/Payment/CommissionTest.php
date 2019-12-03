@@ -2,9 +2,9 @@
 
 namespace Marktstand\Tests\Payment;
 
-use Marktstand\Tests\TestCase;
-use Marktstand\Payment\Commission;
 use Illuminate\Support\Facades\Config;
+use Marktstand\Payment\Commission;
+use Marktstand\Tests\TestCase;
 
 class CommissionTest extends TestCase
 {

@@ -2,11 +2,11 @@
 
 namespace Marktstand\Tests\Product;
 
+use Marktstand\Product\Category;
 use Marktstand\Product\Filter;
-use Marktstand\Tests\TestCase;
 use Marktstand\Product\Product;
 use Marktstand\Product\Quality;
-use Marktstand\Product\Category;
+use Marktstand\Tests\TestCase;
 
 class FilterProductsTest extends TestCase
 {

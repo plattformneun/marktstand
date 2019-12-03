@@ -2,10 +2,10 @@
 
 namespace Marktstand\Managers;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Hash;
 use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UsersManager extends Manager
 {

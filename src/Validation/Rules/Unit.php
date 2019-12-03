@@ -2,8 +2,8 @@
 
 namespace Marktstand\Validation\Rules;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Facades\Config;
 
 class Unit implements Rule
 {

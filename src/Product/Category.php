@@ -2,8 +2,8 @@
 
 namespace Marktstand\Product;
 
-use Marktstand\Support\Slugable;
 use Illuminate\Database\Eloquent\Model;
+use Marktstand\Support\Slugable;
 
 class Category extends Model
 {

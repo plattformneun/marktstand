@@ -2,8 +2,8 @@
 
 namespace Marktstand\Managers;
 
-use Marktstand\Payment\BankAccount;
 use Illuminate\Foundation\Auth\User;
+use Marktstand\Payment\BankAccount;
 
 class BankAccountsManager extends Manager
 {

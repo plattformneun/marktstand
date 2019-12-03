@@ -2,8 +2,8 @@
 
 namespace Marktstand\Managers;
 
-use Marktstand\Company\Contact;
 use Illuminate\Foundation\Auth\User;
+use Marktstand\Company\Contact;
 
 class ContactsManager extends Manager
 {

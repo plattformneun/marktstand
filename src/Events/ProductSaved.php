@@ -2,8 +2,8 @@
 
 namespace Marktstand\Events;
 
-use Marktstand\Product\Product;
 use Illuminate\Queue\SerializesModels;
+use Marktstand\Product\Product;
 
 class ProductSaved
 {

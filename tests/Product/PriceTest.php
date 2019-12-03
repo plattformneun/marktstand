@@ -2,8 +2,8 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Tests\TestCase;
 use Marktstand\Product\Product;
+use Marktstand\Tests\TestCase;
 
 class PriceTest extends TestCase
 {

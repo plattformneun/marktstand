@@ -1,7 +1,7 @@
 <?php
 
-use Marktstand\Users\Producer;
 use Marktstand\Product\Product;
+use Marktstand\Users\Producer;
 
 $factory->define(Product::class, function () {
     return [
