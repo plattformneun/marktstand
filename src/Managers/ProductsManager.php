@@ -2,8 +2,8 @@
 
 namespace Marktstand\Managers;
 
-use Marktstand\Users\Producer;
 use Marktstand\Product\Product;
+use Marktstand\Users\Producer;
 
 class ProductsManager extends Manager
 {

@@ -2,8 +2,8 @@
 
 namespace Marktstand\Events;
 
-use Marktstand\Checkout\Order;
 use Illuminate\Queue\SerializesModels;
+use Marktstand\Checkout\Order;
 
 class OrderUpdated
 {

@@ -1,7 +1,7 @@
 <?php
 
-use Marktstand\Users\Producer;
 use Marktstand\Payment\BankAccount;
+use Marktstand\Users\Producer;
 
 $factory->define(BankAccount::class, function () {
     return [

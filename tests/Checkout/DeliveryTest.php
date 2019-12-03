@@ -2,12 +2,12 @@
 
 namespace Marktstand\Tests\Checkout;
 
-use Marktstand\Tests\TestCase;
-use Marktstand\Users\Supplier;
-use Marktstand\Product\Product;
+use Illuminate\Support\Facades\Config;
 use Marktstand\Checkout\Cart\Cart;
 use Marktstand\Checkout\Cart\Item;
-use Illuminate\Support\Facades\Config;
+use Marktstand\Product\Product;
+use Marktstand\Tests\TestCase;
+use Marktstand\Users\Supplier;
 
 class DeliveryTest extends TestCase
 {

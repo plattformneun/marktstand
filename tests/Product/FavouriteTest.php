@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Product;
 
+use Marktstand\Product\Favourite;
+use Marktstand\Product\Product;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Customer;
-use Marktstand\Product\Product;
-use Marktstand\Product\Favourite;
 
 class FavouriteTest extends TestCase
 {

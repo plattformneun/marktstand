@@ -2,8 +2,8 @@
 
 namespace Marktstand\Http\Resources;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Config;
 
 class Delivery extends JsonResource
 {

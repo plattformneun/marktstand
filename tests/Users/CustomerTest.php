@@ -2,14 +2,14 @@
 
 namespace Marktstand\Tests\Users;
 
+use Illuminate\Support\Facades\Event;
+use Marktstand\Checkout\Cart\Cart;
+use Marktstand\Company\Company;
+use Marktstand\Events\UserVerified;
+use Marktstand\Events\VerificationRequest;
+use Marktstand\Payment\BankAccount;
 use Marktstand\Tests\TestCase;
 use Marktstand\Users\Customer;
-use Marktstand\Company\Company;
-use Marktstand\Checkout\Cart\Cart;
-use Marktstand\Events\UserVerified;
-use Marktstand\Payment\BankAccount;
-use Illuminate\Support\Facades\Event;
-use Marktstand\Events\VerificationRequest;
 
 class CustomerTest extends TestCase
 {

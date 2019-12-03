@@ -2,9 +2,9 @@
 
 namespace Marktstand\Product\Price;
 
-use Marktstand\Product\Product;
-use Marktstand\Payment\Commission;
 use Illuminate\Support\Facades\Config;
+use Marktstand\Payment\Commission;
+use Marktstand\Product\Product;
 
 abstract class Price
 {

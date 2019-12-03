@@ -2,14 +2,14 @@
 
 namespace Marktstand\Tests\Product;
 
+use Illuminate\Support\Facades\Event;
+use Marktstand\Events\ProductSaved;
+use Marktstand\Product\Category;
 use Marktstand\Product\Filter;
-use Marktstand\Tests\TestCase;
-use Marktstand\Users\Producer;
 use Marktstand\Product\Product;
 use Marktstand\Product\Quality;
-use Marktstand\Product\Category;
-use Marktstand\Events\ProductSaved;
-use Illuminate\Support\Facades\Event;
+use Marktstand\Tests\TestCase;
+use Marktstand\Users\Producer;
 
 class ProductTest extends TestCase
 {

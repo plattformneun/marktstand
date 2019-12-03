@@ -2,8 +2,8 @@
 
 namespace Marktstand\Payment;
 
-use Marktstand\Contracts\Price;
 use Illuminate\Support\Facades\Config;
+use Marktstand\Contracts\Price;
 
 class Commission
 {
