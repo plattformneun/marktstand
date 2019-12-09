@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Product\Filter;
-use Marktstand\Tests\TestCase;
-use Marktstand\Product\Product;
 use Marktstand\Exceptions\DuplicateSlugException;
+use Marktstand\Product\Filter;
+use Marktstand\Product\Product;
+use Marktstand\Tests\TestCase;
 
 class FilterTest extends TestCase
 {

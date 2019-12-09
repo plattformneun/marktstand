@@ -2,9 +2,9 @@
 
 namespace Marktstand\Product;
 
-use Marktstand\Users\Producer;
-use Marktstand\Support\Slugable;
 use Illuminate\Database\Eloquent\Model;
+use Marktstand\Support\Slugable;
+use Marktstand\Users\Producer;
 
 class Quality extends Model
 {

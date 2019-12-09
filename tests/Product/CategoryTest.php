@@ -2,10 +2,10 @@
 
 namespace Marktstand\Tests\Product;
 
-use Marktstand\Tests\TestCase;
-use Marktstand\Product\Product;
-use Marktstand\Product\Category;
 use Marktstand\Exceptions\DuplicateSlugException;
+use Marktstand\Product\Category;
+use Marktstand\Product\Product;
+use Marktstand\Tests\TestCase;
 
 class CategoryTest extends TestCase
 {

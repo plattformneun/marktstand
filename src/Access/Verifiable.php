@@ -3,8 +3,8 @@
 namespace Marktstand\Access;
 
 use Carbon\Carbon;
-use Marktstand\Events\UserVerified;
 use Illuminate\Support\Facades\Event;
+use Marktstand\Events\UserVerified;
 use Marktstand\Events\VerificationRequest;
 
 trait Verifiable

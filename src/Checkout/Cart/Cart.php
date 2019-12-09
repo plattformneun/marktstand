@@ -2,9 +2,9 @@
 
 namespace Marktstand\Checkout\Cart;
 
+use Illuminate\Database\Eloquent\Model;
 use Marktstand\Users\Customer;
 use Marktstand\Users\Producer;
-use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {

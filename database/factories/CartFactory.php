@@ -1,7 +1,7 @@
 <?php
 
-use Marktstand\Users\Customer;
 use Marktstand\Checkout\Cart\Cart;
+use Marktstand\Users\Customer;
 
 $factory->define(Cart::class, function () {
     return [
