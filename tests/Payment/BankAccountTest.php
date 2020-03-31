@@ -22,7 +22,7 @@ class BankAccountTest extends TestCase
     {
         $account = factory(BankAccount::class)->create([
             'code' => null,
-       ]);
+        ]);
         $this->assertNull($account->code);
 
         $account->code = 'DABAIE2D';
