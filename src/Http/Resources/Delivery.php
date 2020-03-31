@@ -16,13 +16,13 @@ class Delivery extends JsonResource
     public function toArray($request)
     {
         return [
-           'days' => $this->days(Config::get('marktstand.period')),
-           'subtotal' => $this->subtotal(),
-           'shipping' => $this->shipping(),
-           'minimum_order_value' => $this->minimumOrderValue(),
-           'vat' => $this->vat(),
-           'supplier' => $this->supplier(),
-           'items' => $this->items(),
+            'days' => $this->days(Config::get('marktstand.period')),
+            'subtotal' => $this->subtotal(),
+            'shipping' => $this->shipping(),
+            'minimum_order_value' => $this->minimumOrderValue(),
+            'vat' => $this->vat(),
+            'supplier' => $this->supplier(),
+            'items' => $this->items(),
         ];
     }
 }
